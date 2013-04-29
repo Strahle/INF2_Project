@@ -1,0 +1,10 @@
+﻿Build started 30.04.2013 00:03:19.
+Project "C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" on node 2 (ClCompile target(s)).
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
+  main.c
+Done Building Project "C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" (ClCompile target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07
