@@ -1,14 +1,22 @@
-struct Knoten {
-	char Titel [50];
-	int Pos;
-	Knoten * next;
-	Knoten * prev;
-}
+
 #pragma once
 #ifndef LISTE_H_
 	#define LISTE_H_
+typedef
+	struct strNode {
+		char Titel [50];
+		int Pos;
+		struct strNode * next;
+		struct strNode * prev;
+	} Node;
 
-	Knoten * initList (char * Pfad);
+typedef
+	struct strDetails {
+		char Titel [50];
+		int Pos;
+	} Details ;
+
+	Node * initList (char * Pfad);
 	//Liest alle Titel und deren Positionen aus der Datei aus und erstellt eine Liste
 	//Gibt das erste Element der Knoten zurück
 
@@ -18,16 +26,16 @@ struct Knoten {
 	// Hier muss noch der Header rein ToDO
 	//Fügt der Datei den neuen Datensatz hinzu
 
-	void deleteItem (char * Pfad, Knoten * List);
+	void deleteItem (char * Pfad, Node * List);
 	//Löscht den Datensatz in der Datei
 	//Löscht das Element aus der Liste
 
-	Knoten * searchItem (char * Pfad);
+	Node * searchItem (char * Pfad);
 	//Frägt die zu suchenden Parameter ab
 	//Sucht in der Datei nach den Parametern
 	//Speichert die Ergebnisse in einer Liste
 
-	void changeItem (char * Pfad, Knoten * List);
+	void changeItem (char * Pfad, Node * List);
 	//Frägt das Element ab das geändert weren soll
 	//Frägt nach dem zu ändernden Parameter/n
 	//Ändert die Werte in der Datei

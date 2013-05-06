@@ -8,7 +8,7 @@
 
 int main()
 {
-
+	MediaMenue ();
 	printf("Hall Git");
 
 	printf("Added another line");
