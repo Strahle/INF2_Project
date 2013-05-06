@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MediaManager", "MediaManager\MediaManager.vcxproj", "{93B64BDA-1939-42BF-9F5B-8F361F6A6D39}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MediaManager.test", "MediaManager.test\MediaManager.test.vcxproj", "{EFF1A031-8A2D-4660-9AAF-8793FEB97324}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{93B64BDA-1939-42BF-9F5B-8F361F6A6D39}.Debug|Win32.Build.0 = Debug|Win32
 		{93B64BDA-1939-42BF-9F5B-8F361F6A6D39}.Release|Win32.ActiveCfg = Release|Win32
 		{93B64BDA-1939-42BF-9F5B-8F361F6A6D39}.Release|Win32.Build.0 = Release|Win32
+		{EFF1A031-8A2D-4660-9AAF-8793FEB97324}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EFF1A031-8A2D-4660-9AAF-8793FEB97324}.Debug|Win32.Build.0 = Debug|Win32
+		{EFF1A031-8A2D-4660-9AAF-8793FEB97324}.Release|Win32.ActiveCfg = Release|Win32
+		{EFF1A031-8A2D-4660-9AAF-8793FEB97324}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
