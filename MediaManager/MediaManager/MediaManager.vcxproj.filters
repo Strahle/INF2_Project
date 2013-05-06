@@ -18,5 +18,37 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ausgabe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Eingabe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileEdit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Liste.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ausgabe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Eingabe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Liste.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
