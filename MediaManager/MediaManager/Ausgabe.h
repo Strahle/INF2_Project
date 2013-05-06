@@ -1,8 +1,16 @@
-void showGenere (void);
-//Zeigt eine Liste aller Genere an
+// Hier muss noch der Header rein ToDO
 
-void showList (Knoten * Knot);
-//Zeigt eine Liste aller Titel an (auf einer Seite)
+#pragma once
+#ifndef AUSGABE_H_
+	#define AUSGABE_H_
 
-void showDetail (char * Pfad , Knoten * List);
-//Zeigt eine Liste mit den Details eines Elementes an
+	void showGenere (void);
+	//Zeigt eine Liste aller Genere an
+
+	void showList (Knoten * Knot);
+	//Zeigt eine Liste aller Titel an (auf einer Seite)
+
+	void showDetail (char * Pfad , Knoten * List);
+	//Zeigt eine Liste mit den Details eines Elementes an
+
+#endif

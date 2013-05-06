@@ -1,4 +1,10 @@
 #include <stdio.h>
+#include "Ausgabe.h"
+#include "Eingabe.h"
+#include "FileEdit.h"
+#include "Liste.h"
+#include "Menue.h"
+
 
 int main()
 {
