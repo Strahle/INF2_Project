@@ -9,7 +9,7 @@
 	Details *  addItemInput (void);
 	//Frägt die Werte für das neue Item ab
 	//Gibt bei falscher Eingabe Fehlermeldungen zurück
-	//Bei Abbruch oder krotischem Fehler wird NULL zurück gegeben
+	//Bei Abbruch oder kritischem Fehler wird NULL zurück gegeben
 
 	Node *  deleteItemInput(Node * Knot);
 	//Frägt ab welches Element gelöscht werden soll
