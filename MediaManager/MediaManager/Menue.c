@@ -73,7 +73,8 @@ char ListMenue (void)
 //6: Sortieren
 //7: Genre Auswahl
 {
-
+	printf("################################################################################");
+	gotoxy(34,7);
 }
 
 char showDetailMenue (void)
