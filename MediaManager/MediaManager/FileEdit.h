@@ -1,12 +1,15 @@
 // Hier muss noch der Header rein ToDO
 
-
-
 #pragma once
+
 #ifndef FILEEDIT_H_
 	#define FILEEDIT_H_
 
 	#include "Liste.h"
+
+	//extern struct strNode Node;
+	//extern struct strDetails Details;
+	
 
 	char saveToFile (char * Pfad, Node * List, Details * Detail);
 	//Fügt der Datei einen neuen Datensatz hinzu
