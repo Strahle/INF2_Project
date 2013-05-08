@@ -39,6 +39,24 @@ char clrPosition(char Line, char position ,char space)
 	return -1;
 }
    
+char correctInput(char input, char min, char max, char posX, char posY)
+// Abfrage nach einlesen ob es ein erlaubter Wert für die Menue Listen ist
+{
+	while((input > max || (char)input < min) && input !='99') //
+	{
+		if(input == 'e' || input == 'E') 
+		{
+			exit(0);
+		}
+		else
+		{
+			clrRange(posY,1);
+			gotoxy(posX,posY);
+			printf("Nicht erlaubte eingabe. Bitte nochmal eingeben.\n");
+			scanf_s("%c", &input); fflush(stdin);
+		}
+	}
+}
 
 char MediaMenue (void)
 //Menü für die Auswahl des Genre
@@ -53,17 +71,32 @@ char MediaMenue (void)
 	printf("\t\tIn Welchem Medientyp wollen sie suchen?\n\n");
 	gotoxy(0,21);
 	printf("################################################################################");
-	printf("1: B\x81""cher\t\t");
+	printf("1: B\x81""cher\t");
 	printf("2: CD's\t\t");
-	printf("3: DVD's\t\t");
+	printf("3: DVD's\t\t\t\t");
 	printf("e: exit\n");
 	printf("################################################################################");
-	gotoxy(34,7);
-	scanf_s("%c", &input);
+//	gotoxy(34,7);
+	gotoxy(0,20);
+	scanf_s("%c", &input); fflush(stdin);
+
+	while(input > '3' || input < '1') 
+	{
+		if(input == 'e' || input == 'E') 
+		{
+			exit(0);
+		}
+		else
+		{
+			gotoxy(0,19);
+			printf("Nicht erlaubte eingabe. Bitte nochmal eingeben.\n");
+			scanf_s("%c", &input); fflush(stdin);
+		}
+	}
 	return input;
 }
 
-char ListMenue (void)
+char ListMenue (char media)
 //Menü für die Optionen der Listenanzeige
 //1: Suchen
 //2: Details
@@ -73,8 +106,40 @@ char ListMenue (void)
 //6: Sortieren
 //7: Genre Auswahl
 {
+	char input;
+	clrPosition(1,40,39);
+	gotoxy(40,1);
+	switch(media)
+	{
+	case '1':
+			printf("B\x81""cher");
+		break;
+	case '2':
+			printf("CD");
+		break;
+	case '3':
+			printf("DVD");
+		break;
+	default:
+		break;
+	}
+	clrRange(20,3);
+	gotoxy(0,20);
 	printf("################################################################################");
-	gotoxy(34,7);
+	printf("1: Suchen\t");
+	printf("2: Details\t\t");
+	printf("3: Hinzuf\x81""gen\t\t");
+	printf("4: \x8E""ndern\n");
+	printf("5: L\x94""schen\t");
+	printf("6: Sortieren");
+	gotoxy(50,22);
+	printf("99: Zur\x81""ck\t\t");
+	printf("e: exit\n");
+	
+	gotoxy(0,19);
+	scanf_s("%c", &input); fflush(stdin);
+
+	return correctInput(input, '1', '6', 0, 18);
 }
 
 char showDetailMenue (void)
@@ -82,9 +147,28 @@ char showDetailMenue (void)
 //1: Auswahl
 //2: Ändern
 //3: Löschen
-//4: Zurück zur Liste
+//99: Zurück zur Liste
+//e: exit
 {
+	char input;
+	clrPosition(1,40,39);
+	gotoxy(40,1);
+	printf("Details");
 
+	clrRange(20,3);
+	gotoxy(0,20);
+	printf("################################################################################");
+	printf("1: Auswahl\t");
+	printf("2: \x8E""ndern\t\t");
+	printf("3: L\x94""schen\n");
+	gotoxy(50,22);
+	printf("99: Zur\x81""ck\t\t");
+	printf("e: exit\n");
+
+	gotoxy(0,19);
+	scanf_s("%c", &input); fflush(stdin);
+
+	return correctInput(input, 1, 3, 0, 18);
 }
 
 int SortMenue (void)

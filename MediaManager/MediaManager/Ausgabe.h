@@ -6,8 +6,8 @@
 #ifndef AUSGABE_H_
 	#define AUSGABE_H_
 
-	void showGenere (void);
-	//Zeigt eine Liste aller Genere an
+	//void showGenere (void); Hier sollte man sich nochmal Gedanken machen ????? ToDO
+	//Zeigt eine Liste aller Genre an
 
 	void showList (Node * Knot);
 	//Zeigt eine Liste aller Titel an (auf einer Seite)

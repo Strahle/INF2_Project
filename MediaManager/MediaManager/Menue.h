@@ -28,13 +28,13 @@
 	#define MENUE_H_
 
 	char MediaMenue (void);
-	//Menü für die Auswahl des Genre
+	//Menü für die Auswahl des Genre // ich muss als Buch Liste ausshen
 	//1: Bücher
 	//2: CD's
 	//3: DVD's
 	//e: exit
 
-	char ListMenue (void);
+	char ListMenue (char );
 	//Menü für die Optionen der Listenanzeige
 	//1: Suchen
 	//2: Details
@@ -55,7 +55,7 @@
 	//e: exit
 
 	int SortMenue (void);
-	//Menü für die Optionen der Sortierfunktion
+	//Menü für die Optionen der Sortierfunktion // Ich muss als Bücherliste aussehen
 	//1: Titel abwärts
 	//2: Autor abwärts
 	//3: Verlag/Studio/Label abwärts
