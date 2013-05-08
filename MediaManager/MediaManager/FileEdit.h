@@ -1,10 +1,12 @@
 // Hier muss noch der Header rein ToDO
 
-#include "Liste.h"
+
 
 #pragma once
 #ifndef FILEEDIT_H_
 	#define FILEEDIT_H_
+
+	#include "Liste.h"
 
 	char saveToFile (char * Pfad, Node * List, Details * Detail);
 	//Fügt der Datei einen neuen Datensatz hinzu

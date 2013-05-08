@@ -2,19 +2,21 @@
 #pragma once
 #ifndef LISTE_H_
 	#define LISTE_H_
-typedef
-	struct strNode {
-		char Titel [50];
-		int Pos;
-		struct strNode * next;
-		struct strNode * prev;
-	} Node;
+#include <stdlib.h>
+#include "FileEdit.h"
+	typedef
+		struct strNode {
+			char Titel [50];
+			int Pos;
+			Node * next;
+			Node * prev;
+		} Node;
 
-typedef
-	struct strDetails {
-		char Titel [50];
-		int Pos;
-	} Details ;
+	typedef
+		struct strDetails {
+			char Titel [50];
+			int Pos;
+		} Details ;
 
 	Node * initList (char * Pfad);
 	//Liest alle Titel und deren Positionen aus der Datei aus und erstellt eine Liste
