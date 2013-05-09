@@ -69,7 +69,7 @@ char MediaMenue (void)
 	printf("###\tMedia Manager\t##\t\tMedien Auswahl\n");
 	printf("##########################\n\n\n");
 	printf("\t\tIn Welchem Medientyp wollen sie suchen?\n\n");
-	gotoxy(0,21);
+	gotoxy(0,22);
 	printf("################################################################################");
 	printf("1: B\x81""cher\t");
 	printf("2: CD's\t\t");
@@ -77,8 +77,10 @@ char MediaMenue (void)
 	printf("e: exit\n");
 	printf("################################################################################");
 //	gotoxy(34,7);
-	gotoxy(0,20);
+	gotoxy(0,0);
+	gotoxy(0,21);
 	scanf_s("%c", &input); fflush(stdin);
+	
 
 	while(input > '3' || input < '1') 
 	{
@@ -88,7 +90,7 @@ char MediaMenue (void)
 		}
 		else
 		{
-			gotoxy(0,19);
+			gotoxy(0,20);
 			printf("Nicht erlaubte eingabe. Bitte nochmal eingeben.\n");
 			scanf_s("%c", &input); fflush(stdin);
 		}

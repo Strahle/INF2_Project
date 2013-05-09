@@ -1,13 +1,11 @@
 #include "Liste.h"
 
-
-
 static Node * ankerAnfang, * ankerEnde;
 static Node * actualPos; //Hier ist das Aktuelle Element gespeichert
 
-Node * initList (char * Pfad)
 //Liest alle Titel und deren Positionen aus der Datei aus und erstellt eine Liste
 //Gibt das erste Element der Knoten zurück
+Node * initList ()
 {
 	int i;
 	Node * myNode;
@@ -41,8 +39,10 @@ Node * initList (char * Pfad)
 
 //TODO: FUnktion die Anker Anfang zurück gibt
 
-void deinit(char * Pfad)
-//löscht alle elemente in der liste
+/*
+	löscht alle elemente in der liste
+*/
+void deinit()
 {
 	Node * tmpNode;
 	char * f0=NULL;
@@ -56,7 +56,8 @@ void deinit(char * Pfad)
 	return;
 }
 
-
+/* TODO: Muss in Fileedit da neues element direkt an dateiende geschrieben wird und die liste danach neu gelesen wird
+	- und erst nach reinit der liste in liste auftaucht
 void addItem (char * Pfad, Details * Detail) //muss diese funktion nicht in FileEdit?
 //Frägt alle Paramenter des neuem Items ab
 //Fügt am Ende der Liste ein neues Element hinzu
@@ -64,34 +65,48 @@ void addItem (char * Pfad, Details * Detail) //muss diese funktion nicht in File
 {
 
 }
+*/
 
-void deleteItem (char * Pfad, Node * List)
-//Löscht den Datensatz in der Datei
-//Löscht das Element aus der Liste
+/*
+	Löscht das Element aus der Liste
+
+*/
+void deleteItem (Node * element)
 {
-	free(List);
+	free(element);
+	//TODO: Pointer von prev und next anpassen
+	//In main muss zusätzlich zu deleteItem auch deleteItemFromFile aufgerufen werden
 }
 
+
+/*
+Frägt die zu suchenden Parameter ab
+Sucht in der Datei nach den Parametern
+Gibt den Knoten des Search ankers zurück
+
 Node * searchItem (char * Pfad)
-//Frägt die zu suchenden Parameter ab
-//Sucht in der Datei nach den Parametern
-//Gibt den Knoten des Search ankers zurück
 {
 	Node * foundItem = NULL;
 	return foundItem;
 }
+*/
+
+/*
+
+TODO: muss das nicht in file edit?
 
 void changeItem (char * Pfad, Node * List)
-//Frägt das Element ab das geändert weren soll
-//Frägt nach dem zu ändernden Parameter/n
-//Ändert die Werte in der Datei TODO: muss das nicht in file edit?
 {
-
+	old = new;
 }
+*/
 
-void sortList (char * Pfad)
+
 //Frägt den Wert nach dem Sortiert werden soll
 //Sortiert die Datei nach den Kriterien TODO: muss diese funktion nicht auch in die datei?
+/* TODO: Liste wird nur in der Datei sortiert
+void sortList (char * Pfad)
 {
 
 }
+*/

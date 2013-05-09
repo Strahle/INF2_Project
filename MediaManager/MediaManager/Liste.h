@@ -15,50 +15,57 @@
 #ifndef LISTE_H_
 	#define LISTE_H_
 	#define NUM_ELEMENTS_TO_LOAD (30*3) //sollte ersetzt werden durch die Variable der Elemente pro Seite
+	#define MAX_SEARCH_RESULT (30*3) //Sollte das Suchergebenis kleiner sein als diese Konstante wird das ergebnis im ram gespeichert
 	#define TITLE_LENGTH (50+1)
+	#define MAX_TEXT_LENGTH (1024+1)
+	#define MAX_VERLAG_LENGTH (50)
 
 	#include <stdlib.h>
-	//#include "FileEdit.h"
+
 	typedef
 		struct strNode {
-			char Titel [TITLE_LENGTH];
-			int Pos;
+			char titel [TITLE_LENGTH];
+			int pos;
 			struct strNode * next;
 			struct strNode * prev;
 		} Node;
 
 	typedef
 		struct strDetails {
-			char Titel [TITLE_LENGTH];
-			int Pos;
-		} Details ;
+			unsigned int index;
+			char titel[TITLE_LENGTH];
+			char verlag[MAX_VERLAG_LENGTH];
+			double isbn;
+			time_t erscheinungsdatum;
+			char genre;
+			int pos;
+			char text[MAX_TEXT_LENGTH];
+		} Details;
 
-	Node * initList (char * Pfad);
+		
 	//Liest alle Titel und deren Positionen aus der Datei aus und erstellt eine Liste
 	//Gibt das erste Element der Knoten zurück
+	Node * initList (Node ** Pfad);
 
-	void addItem (char * Pfad, Details * Detail);
 	//Frägt alle Paramenter des neuem Items ab
 	//Fügt am Ende der Liste ein neues Element hinzu
 	// Hier muss noch der Header rein ToDO
 	//Fügt der Datei den neuen Datensatz hinzu
+	void addItem (char * Pfad, Details * Detail);
 
-	void deleteItem (char * Pfad, Node * List);
 	//Löscht den Datensatz in der Datei
 	//Löscht das Element aus der Liste
+	void deleteItem (char * Pfad, Node * List);
 
-	Node * searchItem (char * Pfad);
 	//Frägt die zu suchenden Parameter ab
 	//Sucht in der Datei nach den Parametern
 	//Speichert die Ergebnisse in einer Liste
+	Node * searchItem (char * Pfad);
 
-	void changeItem (char * Pfad, Node * List);
 	//Frägt das Element ab das geändert weren soll
 	//Frägt nach dem zu ändernden Parameter/n
 	//Ändert die Werte in der Datei
+	void changeItem (char * Pfad, Node * List);
 
-	void sortList (char * Pfad);
-	//Frägt den Wert nach dem Sortiert werden soll
-	//Sortiert die Datei nach den Kriterien
 
 #endif

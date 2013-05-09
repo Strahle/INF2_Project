@@ -7,23 +7,19 @@
 
 	#include "Liste.h"
 
-	//extern struct strNode Node;
-	//extern struct strDetails Details;
-	
-
-	char saveToFile (char * Pfad, Node * List, Details * Detail);
 	//Fügt der Datei einen neuen Datensatz hinzu
+	char saveToFile (char * Pfad, Node * List, Details * Detail);
 
-	Details * loadFromFile (char * Pfad, Node * List , char Option);
 	//Lädt einen Datensatz aus der Datei
+	Details * loadFromFile (char * Pfad, Node * List , char Option);
 
-	char printListeToFile (char * Pfad, Node * List, char Option);
 	//Speichert die aktuelle Liste in einer TXT Datei (Titel / Details)
+	char printListeToFile (char * Pfad, Node * List, char Option);
 
-	char sortFile (char * Pfad, Node * List, int Option);
 	//Sortiert die akltuelle Liste nach dem Parameter
-
-	Node * searchInFile (char * Pfad, Details * Detail);
+	char sortFile (char * Pfad, Node * List, int Option);
+	
 	//Sucht in der Datei mit den angegebenen Parametern
-
+	Node * searchInFile (char * Pfad, Details * Detail);
+	
 #endif

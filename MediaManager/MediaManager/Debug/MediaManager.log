@@ -1,18 +1,35 @@
-﻿Build started 08.05.2013 12:55:39.
+﻿Build started 08.05.2013 14:50:34.
 Project "C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" on node 2 (Build target(s)).
 ClCompile:
   C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Ausgabe.c Eingabe.c FileEdit.c Liste.c main.c
   main.c
   Liste.c
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\liste.c(9): warning C4026: function declared with formal parameter list
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\liste.c(75): warning C4028: formal parameter 1 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\liste.c(75): warning C4029: declared formal parameter list different from definition
   FileEdit.c
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(13): warning C4028: formal parameter 1 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(13): warning C4028: formal parameter 2 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(13): warning C4029: declared formal parameter list different from definition
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(19): warning C4028: formal parameter 1 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(19): warning C4028: formal parameter 2 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(19): warning C4029: declared formal parameter list different from definition
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(25): warning C4028: formal parameter 1 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(25): warning C4028: formal parameter 2 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(25): warning C4029: declared formal parameter list different from definition
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(31): warning C4028: formal parameter 1 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(31): warning C4028: formal parameter 2 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(31): warning C4029: declared formal parameter list different from definition
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(37): warning C4028: formal parameter 1 different from declaration
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(37): warning C4029: declared formal parameter list different from definition
   Eingabe.c
   Ausgabe.c
   Generating Code...
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(8): warning C4716: 'saveToFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(14): warning C4716: 'loadFromFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(20): warning C4716: 'printListeToFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(26): warning C4716: 'sortFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(32): warning C4716: 'searchInFile' : must return a value
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(15): warning C4716: 'saveToFile' : must return a value
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(21): warning C4716: 'loadFromFile' : must return a value
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(27): warning C4716: 'printListeToFile' : must return a value
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(33): warning C4716: 'sortFile' : must return a value
+c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(39): warning C4716: 'searchInFile' : must return a value
 Link:
   C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.lib" /MACHINE:X86 Debug\Ausgabe.obj
   Debug\Eingabe.obj
@@ -25,4 +42,4 @@ Done Building Project "C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Media
 
 Build succeeded.
 
-Time Elapsed 00:00:02.30
+Time Elapsed 00:00:01.56
