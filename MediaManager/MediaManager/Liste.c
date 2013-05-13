@@ -9,7 +9,7 @@ Node * initList ()
 {
 	int i;
 	Node * myNode;
-	for (i = 0; i < NUM_ELEMENTS_TO_LOAD; i++)
+	for (i = 0; i < 2; i++)
 	{
 		myNode = (Node*) malloc(sizeof(myNode)); //SPeicher holen
 		//myNode = (Node*)loadFromFile("f0",myNode , 'A'); //TODO: FUnktionsaufruf richtig machen
@@ -101,12 +101,124 @@ void changeItem (char * Pfad, Node * List)
 }
 */
 
-
-//Frägt den Wert nach dem Sortiert werden soll
-//Sortiert die Datei nach den Kriterien TODO: muss diese funktion nicht auch in die datei?
-/* TODO: Liste wird nur in der Datei sortiert
-void sortList (char * Pfad)
-{
-
-}
+/*
+Frägt den Wert nach dem Sortiert werden soll
+Sortiert die Datei nach den Kriterien
+	0		unsigned int index;
+	1		char titel[TITLE_LENGTH];
+	2		char verlag[MAX_VERLAG_LENGTH];
+	3		double isbn;
+	4		time_t erscheinungsdatum;
+	5		char genre;
+	6		int pos;
 */
+int sortList(Node * startNode, char row)
+{
+	switch (row)
+	{
+		case 0:
+			return intSortList(startNode);
+		case 1:
+			return charSortList(startNode);
+		case 2:
+			return charSortList(startNode);
+		case 3:
+			return doubleSortList(startNode);
+		case 4:
+			return intSortList(startNode);
+		case 5:
+			return charSortList(startNode);
+		case 6:
+			return intSortList(startNode);
+		default:
+			break;
+	}
+	return -1;
+}
+
+/*
+sortier Algorythmus für ints
+*/
+static int intSortList(Node * curNode)
+{
+	Node * ankerAnfang_ = curNode;
+	Node * ankerEnde_ = curNode->prev;
+
+	do
+	{
+		if(curNode->details->index <= curNode->prev->details->index) //nichts tuen und ein element weiter schalten
+		{
+			curNode = curNode->next;
+		}
+		else //elemente tauschen
+		{
+			switchNodes(curNode , curNode->next);
+
+		}
+	}
+	while(curNode != ankerAnfang_);
+}
+
+
+//switchtes position of the nodes
+void switchNodes(Node * node1 , Node * node2)
+{
+	Node tmpNode1 = *node1;
+	Node tmpNode2 = *node2;
+
+	if(node2->next == node1)
+	{
+
+		node2->prev->next = node1;
+		//node2->next->prev = node1;
+		node2->prev = node1;
+		node2->next = tmpNode1.next;
+
+		//node1->prev->next = node2;
+		node1->next->prev = node2;
+		node1->prev = tmpNode2.prev;	
+		node1->next = node2;
+
+		return;
+	}
+	else if(node1 == node2->prev)
+	{
+		//edit node1 to pars of node2
+		node1->prev->next = node2;
+		node1->prev = node2;
+		node1->prev = node2;
+		node1->next = node2->next;
+
+		//edot node2 to pars of node1
+		node2->next = node1;
+		node2->next->prev = node1;
+		node2->prev = tmpNode1.prev;
+		node2->next = node1;
+		return;
+	}
+	else
+	{
+		node1->prev->next = node2;
+		node1->next->prev = node2;
+		node1->prev = node2->prev;	
+		node1->next = node2->next;
+
+		node2->prev->next = node1;
+		node2->next->prev = node1;
+		node2->prev = tmpNode1.prev;
+		node2->next = tmpNode1.next;	
+		return;
+	}
+}
+
+
+int charSortList(Node * curNode)
+{
+	return 1;
+}
+
+
+int doubleSortList(Node * curNode)
+{
+	return 1;
+}

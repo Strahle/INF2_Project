@@ -28,6 +28,7 @@
 			int pos;
 			struct strNode * next;
 			struct strNode * prev;
+			struct strDetails * details;
 		} Node;
 
 	typedef
@@ -67,5 +68,12 @@
 	//Ändert die Werte in der Datei
 	void changeItem (char * Pfad, Node * List);
 
+
+	//switchtes position of the nodes
+	void switchNodes(Node * node1 , Node * node2);
+
+	int intSortList(Node * curNode);
+	int charSortList(Node * curNode);
+	int doubleSortList(Node * curNode);
 
 #endif

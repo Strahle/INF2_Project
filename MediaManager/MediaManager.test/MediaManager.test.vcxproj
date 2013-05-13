@@ -41,6 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -81,13 +83,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\MediaManager\Liste.c" />
     <ClCompile Include="mainTest.c" />
     <ClCompile Include="studlist.c" />
+    <ClCompile Include="testListe.c" />
     <ClCompile Include="testStudlist.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\MediaManager\Liste.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="studlist.h" />
+    <ClInclude Include="testListe.h" />
     <ClInclude Include="testStudlist.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MediaManager.test.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
