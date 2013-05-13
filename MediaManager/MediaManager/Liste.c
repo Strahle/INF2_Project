@@ -139,64 +139,63 @@ int sortList(Node * startNode, char row)
 /*
 sortier Algorythmus für ints
 */
-static int intSortList(Node * curNode)
+int intSortList(Node * curNode)
 {
 	Node * ankerAnfang_ = curNode;
 	Node * ankerEnde_ = curNode->prev;
 
 	do
 	{
-		if(curNode->details->index <= curNode->prev->details->index) //nichts tuen und ein element weiter schalten
+		if(curNode->pos >= curNode->next->pos) //nichts tuen und ein element weiter schalten
 		{
 			curNode = curNode->next;
 		}
 		else //elemente tauschen
 		{
 			switchNodes(curNode , curNode->next);
-
+			curNode = ankerAnfang_;
 		}
 	}
-	while(curNode != ankerAnfang_);
+	while(curNode != ankerEnde_);
 }
 
 
 //switchtes position of the nodes
+//sets node2 in position of node 1 and vise versa
+//pointers off the sourrounding elements get changed
 void switchNodes(Node * node1 , Node * node2)
 {
-	Node tmpNode1 = *node1;
-	Node tmpNode2 = *node2;
+	Node tmpNode1 = *node1; //Copys the node pointers
+	Node tmpNode2 = *node2;	//copys the node pointers
 
-	if(node2->next == node1)
+	if(node2->next == node1) //if node 2 is after node 1
 	{
-
+		//mod for node 2
 		node2->prev->next = node1;
-		//node2->next->prev = node1;
 		node2->prev = node1;
 		node2->next = tmpNode1.next;
 
-		//node1->prev->next = node2;
+		//mod for node 1
 		node1->next->prev = node2;
 		node1->prev = tmpNode2.prev;	
 		node1->next = node2;
 
 		return;
 	}
-	else if(node1 == node2->prev)
+	else if(node1 == node2->prev) //if node 2 is befor node 1
 	{
 		//edit node1 to pars of node2
 		node1->prev->next = node2;
 		node1->prev = node2;
-		node1->prev = node2;
 		node1->next = node2->next;
 
 		//edot node2 to pars of node1
-		node2->next = node1;
 		node2->next->prev = node1;
-		node2->prev = tmpNode1.prev;
 		node2->next = node1;
+		node2->prev = tmpNode1.prev;
 		return;
 	}
-	else
+	else //if node 2 or node 1 are more than 1 node away
 	{
 		node1->prev->next = node2;
 		node1->next->prev = node2;

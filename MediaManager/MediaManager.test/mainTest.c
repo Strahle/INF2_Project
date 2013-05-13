@@ -37,17 +37,12 @@ int main(void)
 	
 
 	//Add Tests here
-	Test1 = CU_add_test(Suite1 , "Sortieren der Liste mit mit intSortList()",test_kurze_list_searchId);
+	Test1 = CU_add_test(Suite1 , "Sortieren der Liste mit mit intSortList()",testIntSortList);
 	Test2 = CU_add_test(Suite1 , "Prüft ob das vertauschen von 2 elementen funktioniert",testSwitchNodes);
 	
 
 	//CU_automated_run_tests(); //stats an automated test
 	CU_console_run_tests();
 	//CU_list_tests_to_file(); //saves the test reaults in test data
-
-	testSwitchNodes();
-
-
-	getchar();
 	return 0;
 }

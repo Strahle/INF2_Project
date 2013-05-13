@@ -18,13 +18,13 @@
 	#define MAX_SEARCH_RESULT (30*3) //Sollte das Suchergebenis kleiner sein als diese Konstante wird das ergebnis im ram gespeichert
 	#define TITLE_LENGTH (50+1)
 	#define MAX_TEXT_LENGTH (1024+1)
-	#define MAX_VERLAG_LENGTH (50)
+	#define MAX_VERLAG_LENGTH (50+1)
 
 	#include <stdlib.h>
+	#include "FileEdit.h"	
 
 	typedef
 		struct strNode {
-			char titel [TITLE_LENGTH];
 			int pos;
 			struct strNode * next;
 			struct strNode * prev;

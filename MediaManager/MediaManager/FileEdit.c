@@ -26,14 +26,3 @@ char printListeToFile (Node * List, char Option)
 
 }
 
-//Sortiert die akltuelle Liste nach dem Parameter
-char sortFile (Node * List, int Option)
-{
-
-}
-
-//Sucht in der Datei mit den angegebenen Parametern
-Node * searchInFile (Details * Detail)
-{
-
-}

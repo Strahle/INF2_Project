@@ -1,6 +1,6 @@
 #include "Eingabe.h"
 
-Details *  addItemInput (void)
+Details * addItemInput (void)
 //Frägt die Werte für das neue Item ab
 //Gibt bei falscher Eingabe Fehlermeldungen zurück
 //Bei Abbruch oder krotischem Fehler wird NULL zurück gegeben
