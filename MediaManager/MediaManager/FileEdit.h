@@ -7,19 +7,22 @@
 
 	#include "Liste.h"
 
+	//Gibt FilePath zurück
+	void setFilePath(char * pfad);
+
 	//Fügt der Datei einen neuen Datensatz hinzu
-	char saveToFile (char * Pfad, Node * List, Details * Detail);
+	char saveToFile (Node * List, Details * nodeDetails);
 
 	//Lädt einen Datensatz aus der Datei
-	Details * loadFromFile (char * Pfad, Node * List , char Option);
+	Details * loadFromFile (Node * List , char Option);
 
 	//Speichert die aktuelle Liste in einer TXT Datei (Titel / Details)
-	char printListeToFile (char * Pfad, Node * List, char Option);
+	char printListeToFile (Node * List, char Option);
 
 	//Sortiert die akltuelle Liste nach dem Parameter
-	char sortFile (char * Pfad, Node * List, int Option);
+	char sortFile (Node * List, int Option);
 	
 	//Sucht in der Datei mit den angegebenen Parametern
-	Node * searchInFile (char * Pfad, Details * Detail);
+	Node * searchInFile (Details * Detail);
 	
 #endif

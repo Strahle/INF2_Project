@@ -87,14 +87,12 @@
     <ClCompile Include="mainTest.c" />
     <ClCompile Include="studlist.c" />
     <ClCompile Include="testListe.c" />
-    <ClCompile Include="testStudlist.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\MediaManager\Liste.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="studlist.h" />
     <ClInclude Include="testListe.h" />
-    <ClInclude Include="testStudlist.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

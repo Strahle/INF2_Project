@@ -48,10 +48,13 @@
 
 
 	//switchtes position of the nodes
-	void testSwitchNodes();
+	void testSwitchNodes(void);
 
 	void testIntSortList(void);
 	void testCharSortList(void);
 	void testDoubleSortList(void);
+
+	//Small system test for list
+	void testListeSystem(void);
 
 #endif

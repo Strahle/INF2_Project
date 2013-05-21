@@ -20,15 +20,14 @@
 	#define MAX_TEXT_LENGTH (1024+1)
 	#define MAX_VERLAG_LENGTH (50+1)
 
-	#include <stdlib.h>
-	#include "FileEdit.h"	
+	#include <stdlib.h>	
 
 	typedef
 		struct strNode {
 			int pos;
 			struct strNode * next;
 			struct strNode * prev;
-			struct strDetails * details;
+			struct strDetails * nodeDetails;
 		} Node;
 
 	typedef
@@ -44,19 +43,16 @@
 		} Details;
 
 		
-	//Liest alle Titel und deren Positionen aus der Datei aus und erstellt eine Liste
-	//Gibt das erste Element der Knoten zurück
-	Node * initList (Node ** Pfad);
+	//Inits list with null
+	Node * initList ();
 
-	//Frägt alle Paramenter des neuem Items ab
 	//Fügt am Ende der Liste ein neues Element hinzu
-	// Hier muss noch der Header rein ToDO
 	//Fügt der Datei den neuen Datensatz hinzu
-	void addItem (char * Pfad, Details * Detail);
+	Node * addItem (Details * nodeDetails);
 
 	//Löscht den Datensatz in der Datei
 	//Löscht das Element aus der Liste
-	void deleteItem (char * Pfad, Node * List);
+	void deleteItem (Node * List);
 
 	//Frägt die zu suchenden Parameter ab
 	//Sucht in der Datei nach den Parametern
@@ -66,7 +62,7 @@
 	//Frägt das Element ab das geändert weren soll
 	//Frägt nach dem zu ändernden Parameter/n
 	//Ändert die Werte in der Datei
-	void changeItem (char * Pfad, Node * List);
+	void changeItem (Node * nodeToChange, Details * newDetails);
 
 
 	//switchtes position of the nodes
@@ -75,5 +71,8 @@
 	int intSortList(Node * curNode);
 	int charSortList(Node * curNode);
 	int doubleSortList(Node * curNode);
+
+	//Returns ankerAnfang
+	Node * getAnkerAnfang();
 
 #endif

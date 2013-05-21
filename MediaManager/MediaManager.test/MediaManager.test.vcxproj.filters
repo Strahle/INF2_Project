@@ -18,16 +18,13 @@
     <ClCompile Include="mainTest.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testStudlist.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="studlist.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testListe.c">
+    <ClCompile Include="..\MediaManager\Liste.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\MediaManager\Liste.c">
+    <ClCompile Include="testListe.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -36,9 +33,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="studlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="testStudlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">

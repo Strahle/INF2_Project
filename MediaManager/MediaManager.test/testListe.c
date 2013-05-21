@@ -1,40 +1,79 @@
 #include "testListe.h"
 
+//This function checks all pointers in list for consistence
+void testCheckListConsistence(Node * ankerAnfang)
+{
+	Node * myNode=ankerAnfang;
+	CU_ASSERT_PTR_EQUAL(ankerAnfang->prev, NULL); //checks for first element
+	CU_ASSERT_PTR_EQUAL(ankerAnfang->next->prev, ankerAnfang); //check for first element
+	myNode = myNode->next; //nächste node
+	do{
+		CU_ASSERT_PTR_EQUAL(myNode , myNode->next->prev); //Zeiger des nächsten element richtig
+		CU_ASSERT_PTR_EQUAL(myNode , myNode->prev->next); //Zeiger des vorherigen elemnts richtig
+		myNode = myNode->next; //nächste node
+	}
+	while(myNode->next != NULL);
+	CU_ASSERT_PTR_EQUAL(myNode->next , NULL); //checks last element
+	CU_ASSERT_PTR_EQUAL(myNode->prev->next, NULL); //checks last element
+}
 
 //Init function for a list with n elements
+//random pos = 0 : List by details.pos 1 to n
+//random pos = 1 : List with random elements
 Node * initListeWithNelements(int n, int randomPos)
 {
-	Node * ankerAnfang=NULL, * ankerEnde=NULL;
-	Node * myNode1=NULL , * myNodePrev=NULL, * myNodeNext=NULL;
+	Node * myNode=NULL;
+	Details * myDetails=NULL;
 	srand(time(NULL));
+	
+	if(n <= 0) {
+		return NULL;
+	}
+	
 	for (;  n > 0; n--)
 	{
-		myNodeNext = myNode1;
-		myNode1 = (Node*) malloc(sizeof(Node)); //SPeicher holen
-		if(ankerEnde == NULL) //Prüfen ob anker ende gesetzt ist , forschleife zählt rückwärts!
-		{
-			ankerEnde = myNode1;
-		}
-		else
-		{
-			myNodeNext->prev = myNode1;
-		}
-		strncpy_s(myNode1->titel, 50, "Node X", 10);
-		if(randomPos)
-		{
-			myNode1->pos = rand();
-		}
-		else
-		{
-			myNode1->pos = n;
-		}
-
-		myNode1->next = myNodeNext;
-		myNode1->prev = NULL;
+		myDetails = (Details *) calloc(1,sizeof(Details));
+		myDetails->pos = n;
+		myNode = addItem(myDetails);
+		myNode->pos = n;
 	}
-	myNode1->prev = ankerEnde;
-	ankerEnde->next = myNode1;
-	return myNode1;
+	return getAnkerAnfang();
+}
+
+void debugOutput(Node * ankerAnfang)
+{
+	int i=1;
+	Node * myNode = ankerAnfang;
+	printf("\n====\n");
+	while(myNode != NULL)
+	{
+		if(myNode != NULL && myNode->nodeDetails != NULL)
+		{
+			printf("%i:%i: %s\n",i, myNode->pos, myNode->nodeDetails->titel);
+		}
+		else
+		{
+			printf("%i:NULL:NULL\n",i);
+		}
+		myNode = myNode->next;
+		i++;
+	}
+	printf("====\n");
+}
+
+//Small system test for list
+void testListeSystem(void)
+{
+	Node * myNode;
+	Details * test=NULL;
+	test = (Details *) calloc(1,sizeof(Details));
+	test->index = 256;
+	initList();
+	initListeWithNelements(10, 1); //generate list
+	myNode = getAnkerAnfang();
+	addItem(test);
+	debugOutput(myNode);
+	testCheckListConsistence(myNode);
 }
 		
 //Liest alle Titel und deren Positionen aus der Datei aus und erstellt eine Liste
@@ -61,23 +100,6 @@ void testSearchItem (void);
 //Ändert die Werte in der Datei
 void testChangeItem (void);
 
-
-void debugOutput(Node * ankerAnfang)
-{
-	int i=1;
-	Node * myNode = ankerAnfang;
-	printf("\n====\n");
-	do
-	{
-		printf("%i:%i: %s\n",i, myNode->pos, myNode->titel);
-		myNode= myNode->next;
-		i++;
-	}
-	while(ankerAnfang != myNode);
-	printf("====\n");
-}
-
-
 //switchtes position of the nodes
 void testSwitchNodes(void)
 {
@@ -89,7 +111,7 @@ void testSwitchNodes(void)
 
 	switchNodes(ankerAnfang->next, ankerAnfang->next->next);
 	debugOutput(ankerAnfang);
-
+	testCheckListConsistence(getAnkerAnfang());
 }
 
 void testIntSortList(void)
