@@ -46,7 +46,7 @@
 	//99: zurück
 	//e: exit
 
-	char showDetailMenue (void);
+	char showDetailMenue (char );
 	//Menü für die Optionen der Detailanzeige
 	//1: Auswahl
 	//2: Ändern

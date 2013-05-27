@@ -8,12 +8,17 @@
 
 int main()
 {
-	char input;
-	 input = ListMenue (MediaMenue ());
+	char input, media;
+
+	SortMenue();
+
+
+	 media = MediaMenue ();
+	 input = ListMenue (media);
 	 switch(input)
 	 {
 	 case '2':
-			showDetailMenue ();
+			showDetailMenue (media);
 			break;
 	 default:
 		 break;
