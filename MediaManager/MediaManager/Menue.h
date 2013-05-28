@@ -19,7 +19,13 @@
 			die unterschiedlichen Optionen an die in der Liste möglich sind.
 			Und Returnt dann die Option ebenfalls wieder als char.
 			
-					
+	#### ToDo	define für 
+						Standard Hintergrund / Schriftfarbe
+						Menu Hintergrund / Schriftfarbe
+						Fehler Hintergrund / Schriftfarbe
+						Sonder Hintergrund / Schriftfarbe
+
+				Funktion für Menu Baum
 */
 			
 
@@ -34,7 +40,7 @@
 	//3: DVD's
 	//e: exit
 
-	char ListMenue (char );
+	char ListMenue (void );
 	//Menü für die Optionen der Listenanzeige
 	//1: Suchen
 	//2: Details
@@ -46,7 +52,7 @@
 	//99: zurück
 	//e: exit
 
-	char showDetailMenue (char );
+	char showDetailMenue (void );
 	//Menü für die Optionen der Detailanzeige
 	//1: Auswahl
 	//2: Ändern

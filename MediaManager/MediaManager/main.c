@@ -8,21 +8,7 @@
 
 int main()
 {
-	char input, media;
 
-	SortMenue();
-
-
-	 media = MediaMenue ();
-	 input = ListMenue (media);
-	 switch(input)
-	 {
-	 case '2':
-			showDetailMenue (media);
-			break;
-	 default:
-		 break;
-	 }
 
 
 	//printf("Hall Git");
