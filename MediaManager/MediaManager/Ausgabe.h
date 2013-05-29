@@ -10,9 +10,9 @@
 	//Zeigt eine Liste aller Genre an
 
 	void showList (Node * Knot);
-	//Zeigt eine Liste aller Titel an (auf einer Seite)
+	//Zeigt eine Liste aller Titel an (auf einer Seite Bereich Zeile 3-21)
 
-	void showDetail (char * Pfad , Node * List);
-	//Zeigt eine Liste mit den Details eines Elementes an
+	void showDetail (Details * List);
+	//Zeigt eine Liste mit den Details eines Elementes an (Bereich 3-22)
 
 #endif
