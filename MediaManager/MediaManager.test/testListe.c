@@ -34,6 +34,7 @@ Node * initListeWithNelements(int n, int randomPos)
 	{
 		myDetails = (Details *) calloc(1,sizeof(Details));
 		myDetails->pos = n;
+		strcpy_s(myDetails->titel,sizeof(myDetails->titel),"titel");
 		myNode = addItem(myDetails);
 		myNode->pos = n;
 	}
