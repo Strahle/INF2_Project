@@ -28,7 +28,7 @@ Details * CreateRandomDetails(unsigned int seed)
 	//make random titel
 	for (i = 0; i < sizeof(myDetails->titel)-2; i++)
 	{
-		cArrTitel[i] = (rand()%57) + 64;  //modul 62 + 64 matchs ascii signs from A to z
+		cArrTitel[i] = (rand()%26) + 64;  //modul 62 + 64 matchs ascii signs from A to z
 	}
 	cArrTitel[sizeof(myDetails->titel)-1] = '\0';
 
@@ -48,6 +48,7 @@ Node * initListeWithNelements(int n, int randomPos)
 {
 	Node * myNode=NULL;
 	Details * myDetails=NULL;
+	initList();
 	srand(time(NULL));
 	
 	if(n <= 0) {
@@ -127,7 +128,7 @@ void testChangeItem (void);
 //switchtes position of the nodes
 void testSwitchNodes(void)
 {
-	
+
 	Node * ankerAnfang=NULL;
 	//CU_ASSERT_PTR_NOT_NULL_FATAL(ankerAnfang);	//Sicherstellen das Speicher alloziert wurde
 
@@ -142,12 +143,10 @@ void testIntSortList(void)
 {
 	Node * ankerAnfang;
 	
-	ankerAnfang = initListeWithNelements(100,1); //ini liste with 4 elements
-	debugOutput(ankerAnfang);
-	bubbleSortList(ankerAnfang);
-	debugOutput(ankerAnfang);
-	getchar();
-
+	ankerAnfang = initListeWithNelements(30000,1); //ini liste with 4 elements
+	//debugOutput(ankerAnfang);
+	bubbleSortList(sortTitelAsc);
+	//debugOutput(ankerAnfang);
 }
 void testCharSortList(void)
 {

@@ -68,11 +68,14 @@
 	//switchtes position of the nodes
 	void swapNodes(Node * node1 , Node * node2);
 
-	int intSortList(Node * curNode);
-	int charSortList(Node * curNode);
-	int doubleSortList(Node * curNode);
 
-	int bubbleSortList(Node * startNode);
+	void bubbleSortList(int (*compareFunction) (Details *,Details *));
+
+	//Sortieren nach Index aufsteigend
+	int sortIndexAsc (Details * a, Details * b);
+	int sortIndexAsc (Details * a, Details * b);
+	int sortIsbnAsc (Details * a, Details * b);
+	int sortTitelAsc (Details * a, Details * b);
 
 	//Returns ankerAnfang
 	Node * getAnkerAnfang();
