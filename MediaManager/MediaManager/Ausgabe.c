@@ -11,13 +11,9 @@
  //   time_t Zeitstempel;
  //
 
-	////strcpy(Test->titel ,"Ich bin ein test um zu gucken ob es geht.234567890");
-	////Test->genre ='1';
-	////strcpy(Test->verlag,"Ich bin der Werner Heissenberg Verlag und Kokse bla");
-	////strcpy(Test->text,"So jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei");
-	////Test->erscheinungsdatum = time(0);
-	////Test->isbn	= 123456789;
-	//	
+	//Details *Test = NULL;
+	//strcpy_s(Test->verlag,sizeof(&Test->verlag),"Ich bin der Werner Heissenberg Verlag und Kokse ");
+	//strcpy_s(Test->text, sizeof(Test->text -10),"So jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichen");
 	//showDetail(Test);
 
 	//MediaMenue ();
@@ -40,23 +36,34 @@ void showGenere (void)
 
 }
 
-void showList (Node * Knot)
+void showList (Node * Knot , char prev)
 //Zeigt eine Liste aller Titel an (auf einer Seite)
 {
+	int i,j = 1;
+	if (prev == 1)
+	{
+		j = -1;
+	}
+	
+	for (i = 0 ; i <=18; i + j)
+	{
+		printf("%i: %s\n",Knot->nodeDetails->pos, Knot->nodeDetails->titel);
+		Knot = Knot->next;
+	}
 
 }
 
 void showDetail (Details * Detail)
 //Zeigt eine Liste mit den Details eines Elementes an
 {
-
+	int i=0, j,k = 0, start = 0;
+	printf("\n\n\n");
 	printf("Der Titel:\tIch bin ein test um zu gucken ob es geht.234567890\n");
-	printf("Das Genre:\t1\n");
-	printf("Der Verlag:\tIch bin der Werner Heissenberg Verlag und Kokse bla\n");
-	printf("Das Erscheinungsdatum:\tJuli.19985\n");
-	printf("Die ISBN:\t123-9875-5412\n");
-	printf("Details:\tSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei\n");
-
+	printf("Genre:\t1\n");
+	printf("Verlag:\t\tIch bin der Werner Heissenberg Verlag und Kokse bla\n");
+	printf("Erscheinung\tJuli.19985\t\t");
+	printf("ISBN:\t\t123-9875-5412\n");
+//	printf("Details:\t\tSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei\n");
 
 //	tm *nun;
  //   nun = localtime(&Detail->erscheinungsdatum);
@@ -65,5 +72,36 @@ void showDetail (Details * Detail)
 	//printf("Der Verlag:\t%s\n",Detail->verlag);
 	//printf("Das Erscheinungsdatum:\t%i.%i.%i\n",nun->tm_year, nun->tm_mon, nun->tm_mday);
 	//printf("Die ISBN:\t%d\n",Detail->isbn);
-	//printf("Details:\t%s\n",Detail->text);
+//	printf("Details:\t%s\n",Detail->text);
+
+	while(k <= 13 && start <=1023 && Detail->text[start + i] != 0 )
+	{
+		for (i = 80; i >= 0; i--)
+		{
+			if (Detail->text[start + i] == ' ' || Detail->text[start + i] == 0 )
+			{
+				for (j = start; j< (start + i); j ++)
+				{
+					printf("%c",Detail->text[j]);
+				}
+				if (i < 80)
+				{
+					printf("\n");
+				}
+				k += 1;
+				start += (i+1);
+				break;
+			}
+			else if (i == 0)
+			{
+				for (j = start; j< (start + 80); j ++)
+				{
+					printf("%c",Detail->text[j]);
+				}
+				k += 1;
+				start += (79);
+				break;
+			}
+		}
+	}
 }

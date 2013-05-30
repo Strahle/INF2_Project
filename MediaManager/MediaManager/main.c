@@ -5,11 +5,11 @@
 #include "FileEdit.h"
 #include "Menue.h"
 
+#include <string.h>
 
 
 int main()
 {
-
 
 
 	//printf("Hall Git");

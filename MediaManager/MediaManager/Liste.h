@@ -17,7 +17,7 @@
 	#define NUM_ELEMENTS_TO_LOAD (30*3) //sollte ersetzt werden durch die Variable der Elemente pro Seite
 	#define MAX_SEARCH_RESULT (30*3) //Sollte das Suchergebenis kleiner sein als diese Konstante wird das ergebnis im ram gespeichert
 	#define TITLE_LENGTH (50+1)
-	#define MAX_TEXT_LENGTH (1024+1)
+	#define MAX_TEXT_LENGTH (1020+1)
 	#define MAX_VERLAG_LENGTH (50+1)
 
 	#include <stdlib.h>	
