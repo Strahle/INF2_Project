@@ -17,6 +17,30 @@ void testCheckListConsistence(Node * ankerAnfang)
 	CU_ASSERT_PTR_EQUAL(myNode->prev->next, NULL); //checks last element
 }
 
+//Get Random Details
+Details * CreateRandomDetails(unsigned int seed)
+{
+	
+	Details * myDetails = NULL;
+	char cArrTitel[sizeof(myDetails->titel)];
+	int i;
+	srand(seed);
+	//make random titel
+	for (i = 0; i < sizeof(myDetails->titel)-2; i++)
+	{
+		cArrTitel[i] = (rand()%57) + 64;  //modul 62 + 64 matchs ascii signs from A to z
+	}
+	cArrTitel[sizeof(myDetails->titel)-1] = '\0';
+
+	myDetails = (Details *) calloc(1,sizeof(Details));
+	myDetails->pos = rand();
+	myDetails->index = rand();
+	strcpy_s(myDetails->titel,sizeof(myDetails->titel),cArrTitel);
+	//strcpy_s(myDetails->genre,sizeof(myDetails->genre),"Horror");
+
+	return myDetails;
+}
+
 //Init function for a list with n elements
 //random pos = 0 : List by details.pos 1 to n
 //random pos = 1 : List with random elements
@@ -32,14 +56,13 @@ Node * initListeWithNelements(int n, int randomPos)
 	
 	for (;  n > 0; n--)
 	{
-		myDetails = (Details *) calloc(1,sizeof(Details));
-		myDetails->pos = n;
-		strcpy_s(myDetails->titel,sizeof(myDetails->titel),"titel");
+		myDetails = CreateRandomDetails(n);
 		myNode = addItem(myDetails);
 		myNode->pos = n;
 	}
 	return getAnkerAnfang();
 }
+
 
 void debugOutput(Node * ankerAnfang)
 {
@@ -50,7 +73,7 @@ void debugOutput(Node * ankerAnfang)
 	{
 		if(myNode != NULL && myNode->nodeDetails != NULL)
 		{
-			printf("%i:%i: %s\n",i, myNode->pos, myNode->nodeDetails->titel);
+			printf("%i:%i:%i: %s\n",i, myNode->pos, myNode->nodeDetails->index, myNode->nodeDetails->titel);
 		}
 		else
 		{
@@ -110,7 +133,7 @@ void testSwitchNodes(void)
 
 	ankerAnfang = initListeWithNelements(4,0);
 
-	switchNodes(ankerAnfang->next, ankerAnfang->next->next);
+	swapNodes(ankerAnfang->next, ankerAnfang->next->next);
 	debugOutput(ankerAnfang);
 	testCheckListConsistence(getAnkerAnfang());
 }
@@ -119,9 +142,9 @@ void testIntSortList(void)
 {
 	Node * ankerAnfang;
 	
-	ankerAnfang = initListeWithNelements(4,1); //ini liste with 4 elements
-
-	intSortList(ankerAnfang);
+	ankerAnfang = initListeWithNelements(100,1); //ini liste with 4 elements
+	debugOutput(ankerAnfang);
+	bubbleSortList(ankerAnfang);
 	debugOutput(ankerAnfang);
 	getchar();
 

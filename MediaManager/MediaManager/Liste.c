@@ -168,18 +168,6 @@ void setPointerToPointer(void * pt1, void * pt2)
 
 
 /*
-Frägt die zu suchenden Parameter ab
-Sucht in der Datei nach den Parametern
-Gibt den Knoten des Search ankers zurück
-
-Node * searchItem (char * Pfad)
-{
-	Node * foundItem = NULL;
-	return foundItem;
-}
-*/
-
-/*
 *	Ändert details einer Node
 *	Details will copied to nodeToChange
 */
@@ -229,24 +217,13 @@ sortier Algorythmus für ints
 */
 int intSortList(Node * curNode)
 {
-	while(curNode != NULL && curNode->next != NULL)
-	{
-		if(curNode->pos >= curNode->next->pos) //nichts tuen und ein element weiter schalten
-		{
-			curNode = curNode->next;
-		}
-		else //elemente tauschen
-		{
-			switchNodes(curNode , curNode->next);
-			curNode = ankerAnfang;
-		}
-	}
+
 }
 
 //switchtes position of the nodes
 //sets node2 in position of node 1 and vise versa
 //pointers off the sourrounding elements get changed
-void switchNodes(Node * node1 , Node * node2)
+void swapNodesRingBuffer(Node * node1 , Node * node2)
 {
 	Node tmpNode1 = *node1; //Copys the node pointers
 	Node tmpNode2 = *node2;	//copys the node pointers
@@ -293,6 +270,18 @@ void switchNodes(Node * node1 , Node * node2)
 	}
 }
 
+//switchtes position of the nodes
+//sets node2 in position of node 1 and vise versa
+//pointers off the sourrounding elements get changed
+void swapNodes(Node * node1 , Node * node2)
+{
+	Details * tmpNode1 = node1->nodeDetails; //Copys the node pointers
+	Details * tmpNode2 = node2->nodeDetails;	//copys the node pointers
+
+	node1->nodeDetails = tmpNode2;
+	node2->nodeDetails = tmpNode1;
+}
+
 
 int charSortList(Node * curNode)
 {
@@ -305,34 +294,41 @@ int doubleSortList(Node * curNode)
 	return 1;
 }
 
-//quicksort for lists
-int listQuicksort(Node * startNode)
+//bubblesort for lists
+int bubbleSortList(Node * startNode)
 {
-	int i=0; //num of elements
-	Node * tmpAnkerAnfang , * tmpAnkerEnde;
+	int numElementsInList=0 , i; //num of elements
+	Node * tmpAnkerAnfang , * tmpAnkerEnde=NULL, * curNode;
 	//find beginning and end of list
-		tmpAnkerAnfang = startNode->prev;
-		tmpAnkerEnde = startNode->next;
-		while(tmpAnkerAnfang != NULL)
+	tmpAnkerAnfang = startNode;
+	tmpAnkerEnde = startNode->next;
+	while(tmpAnkerAnfang->prev != NULL)
+	{
+		tmpAnkerAnfang = tmpAnkerAnfang->prev;
+		numElementsInList++;
+	}
+	while(tmpAnkerEnde->next != NULL)
+	{
+		tmpAnkerEnde = tmpAnkerEnde->next;
+		numElementsInList++;
+	}
+
+	do{ //restarts from beginning
+		curNode = tmpAnkerAnfang;
+		//Moves element to ende
+		while(curNode != tmpAnkerEnde) //TODO Bug fix the last element is not sorted
 		{
-			tmpAnkerAnfang = tmpAnkerAnfang->prev;
-			i++;
+			if (curNode->nodeDetails->index > curNode->next->nodeDetails->index)
+			{
+				swapNodes(curNode, curNode->next);
+				curNode = curNode->next;
+			}
+			else
+			{
+				curNode = curNode->next;
+			}
 		}
-		while(tmpAnkerEnde != NULL)
-		{
-			tmpAnkerEnde = tmpAnkerEnde->next;
-			i++;
-		}
-	
+		tmpAnkerEnde = curNode->prev;
 
-	
-
-
-
-}
-
-//
-int listQuicksortSelectPivot(Node * ankerAnfang)
-{
-
+	}while(curNode->prev != NULL);
 }
