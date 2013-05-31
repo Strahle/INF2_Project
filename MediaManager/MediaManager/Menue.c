@@ -89,9 +89,9 @@ int correctInput(int min, int max, char posX, char posY, boolean back)
 		{
 			clrRange(posY,1);
 			gotoxy(posX,posY);
-			setColor(0,12);
+			setColor(fehlerBackground,fehlerFond);
 			printf("Nicht erlaubte Eingabe. Bitte nochmal eingeben.\n");
-			setColor(0,15);
+			setColor(standBackground,standFond);
 			scanf_s("%i", &input); fflush(stdin);
 		}
 	}
@@ -101,7 +101,7 @@ int correctInput(int min, int max, char posX, char posY, boolean back)
 //Hier wird die Kopfzeile und zurück und exit erzeugt
 char Footer(boolean back)
 {
-	setColor(7,9);
+	setColor(sonderBackground,sonderFond);
 	if(back)
 	{
 		gotoxy(55,24);
@@ -113,7 +113,7 @@ char Footer(boolean back)
 	}
 	printf("-1: exit\n");
 
-	setColor(0,15);
+	setColor(standBackground,standFond);
 	return;
 }
 
@@ -129,13 +129,13 @@ char Head(char Number, boolean back)
 	}
 	else
 	{
-		setColor(7,1);
+		setColor(menueBackground,menueFond);
 		gotoxy(actPos,2);
 
 		switch (Number)
 		{
 		case 0:
-				setColor(7,9);
+			setColor(sonderBackground,sonderFond);
 				gotoxy(0,0);
 				printf("\t\t\t\n");// tab sind 8 Leerzeichen
 				printf("     Media Manager\t\n");
@@ -172,7 +172,7 @@ char Head(char Number, boolean back)
 				actPos += 10;
 	}
 
-	setColor(0,15);
+	setColor(standBackground,standFond);
 	return;
 }
 
@@ -186,7 +186,7 @@ char MediaMenue (void)
 
 	Head(0, 0);
 
-	setColor(0,15);
+	setColor(standBackground,standFond);
 	clrPosition(1,35,45);
 	gotoxy(35,1);
 	printf("Medien Auswahl");
@@ -197,7 +197,7 @@ char MediaMenue (void)
 
 
 	gotoxy(0,24);
-	setColor(7,1);
+	setColor(menueBackground,menueFond);
 	printf("1: B\x81""cher\t");
 	printf("2: CD's\t\t");
 	printf("3: DVD's\t\t\t\t");
@@ -229,7 +229,7 @@ char ListMenue (void)
 	printf("Listenanzeige");	
 
 	gotoxy(0,23);
-	setColor(7,1);
+	setColor(menueBackground,menueFond);
 	printf("1: Suchen\t");
 	printf("2: Details\t");
 	printf("3: Hinzuf\x81""gen\t\t");
@@ -259,7 +259,7 @@ char showDetailMenue (void)
 	printf("Detail Men\x81");
 
 	gotoxy(0,24);
-	setColor(7,1);
+	setColor(menueBackground,menueFond);
 	printf("1: Auswahl\t");
 	printf("2: \x8E""ndern\t");
 	printf("3: L\x94""schen\t\t\t");
@@ -296,9 +296,9 @@ int SortMenue (void)
 	printf("Sortier Men\x81");
 
 	gotoxy(0,19);
-	setColor(7,9);
+	setColor(sonderBackground,sonderFond);
 	printf("abw\x84""rts Sortieren\t\t\t\t\t\t\t\t");
-	setColor(7,1);
+	setColor(menueBackground,menueFond);
 	printf("1: Titel\t\t");
 	printf("2: Autor\t");
 	printf("3: Verlag/Studio/Label\t");
@@ -306,9 +306,9 @@ int SortMenue (void)
 	printf("5: Erscheinungsdatum\t");
 	printf("6: Schauspieler\t\t\t\t\t\t");
 
-	setColor(7,9);
+	setColor(sonderBackground,sonderFond);
 	printf("aufw\x84""rts Sortieren\t\t\t\t\t\t\t\t");
-	setColor(7,1);
+	setColor(menueBackground,menueFond);	setColor(7,1);
 	printf("11: Titel\t\t");
 	printf("12: Autor\t");
 	printf("13: Verlag/Studio/Label\t");
@@ -342,7 +342,7 @@ char ChangeMenue (void)
 	printf("Eintrag \x8E""ndern");
 
 	gotoxy(0,22);
-	setColor(7,1);
+	setColor(menueBackground,menueFond);
 	printf("1: Titel\t\t");
 	printf("2: Autor\t");
 	printf("3: Verlag/Studio/Label\t");
@@ -375,7 +375,7 @@ char SearchMenue (void)
 	printf("Suchen");
 
 	gotoxy(0,23);
-	setColor(7,1);
+	setColor(menueBackground,menueFond);
 	printf("1: Titel\t\t");
 	printf("2: Autor\t");
 	printf("3: Verlag/Studio/Label\t");
@@ -406,7 +406,7 @@ char SearchMenueResult (void)
 	printf("Ergebnis");
 
 	gotoxy(0,22);
-	setColor(7,1);
+	setColor(menueBackground,menueFond);
 	printf("1: Suchen\t");
 	printf("2: Detail\t");
 	printf("3: \x8E""ndern\t");

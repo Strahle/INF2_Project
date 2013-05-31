@@ -19,19 +19,22 @@
 			die unterschiedlichen Optionen an die in der Liste möglich sind.
 			Und Returnt dann die Option ebenfalls wieder als char.
 			
-	#### ToDo	define für 
-						Standard Hintergrund / Schriftfarbe
-						Menu Hintergrund / Schriftfarbe
-						Fehler Hintergrund / Schriftfarbe
-						Sonder Hintergrund / Schriftfarbe
 
-				Funktion für Menu Baum
 */
 			
 
 #pragma once
 #ifndef MENUE_H_
 	#define MENUE_H_
+	
+	#define standBackground (0)
+	#define menueBackground (7) 
+	#define fehlerBackground (0) 
+	#define sonderBackground (7) 
+	#define standFond (15) 
+	#define menueFond (1) 
+	#define fehlerFond (12) 
+	#define sonderFond (9) 
 
 	char MediaMenue (void);
 	//Menü für die Auswahl des Genre // ich muss als Buch Liste ausshen
