@@ -114,59 +114,66 @@ char Footer(boolean back)
 
 //Hier wird die Baumstruktur erezugt
 // Dazu muss entsprechdnde Nummer des Menues übergeben werden
-char Head(char Number, boolean back)
+//	0: Header Media Manger
+//	1: Bücher
+//	2: CD
+//	3: DVD
+//	4: Details
+//	5: suchen
+//	6: sortieren
+//	7: ergebnis
+//	8: änder
+//	9: eine Struktur zurück
+
+char Head(char Number)
 {
 	static int actPos = -10;
 
-	if (back)
-	{
-		actPos -= 10;
-		clrPosition(2,actPos, 8);
-	}
-	else
-	{
-		setColor(menueBackground,menueFond);
-		gotoxy(actPos,2);
+	setColor(menueBackground,menueFond);
+	gotoxy(actPos,2);
 
-		switch (Number)
-		{
-		case 0:
-			setColor(sonderBackground,sonderFond);
-				gotoxy(0,0);
-				printf("\t\t\t\n");// tab sind 8 Leerzeichen
-				printf("     Media Manager\t\n");
-				printf("\t\t\t");
-				break;
-
-		case 1:
-				printf("B\x81""cher/   ");
-				break;
-		case 2:
-				printf("CD's/     ");
-				break;
-		case 3:
-				printf("DVD's/    ");
-				break;
-		case 4:
-				printf("Details/  ");
-				break;
-		case 5:
-				printf("Suchen/   ");
-				break;
-		case 6:
-				printf("Sortieren/");
-				break;
-		case 7:
-				printf("Ergebnis/ ");
-				break;
-		case 8:
-				printf("\x8E""ndern/   ");
-				break;
-		default:
+	switch (Number)
+	{
+	case 0:
+		setColor(sonderBackground,sonderFond);
+			gotoxy(0,0);
+			printf("\t\t\t\n");// tab sind 8 Leerzeichen
+			printf("     Media Manager\t\n");
+			printf("\t\t\t");
 			break;
-		}
-				actPos += 10;
+
+	case 1:
+			printf("B\x81""cher/   ");
+			break;
+	case 2:
+			printf("CD's/     ");
+			break;
+	case 3:
+			printf("DVD's/    ");
+			break;
+	case 4:
+			printf("Details/  ");
+			break;
+	case 5:
+			printf("Suchen/   ");
+			break;
+	case 6:
+			printf("Sortieren/");
+			break;
+	case 7:
+			printf("Ergebnis/ ");
+			break;
+	case 8:
+			printf("\x8E""ndern/   ");
+			break;
+	case 9:
+			actPos -= 20;
+			clrPosition(2,actPos, 8);
+			break;
+	default:
+		break;
 	}
+			actPos += 10;
 
 	setColor(standBackground,standFond);
 	return;
@@ -180,7 +187,7 @@ char MediaMenue (void)
 {
 	int result;
 
-	Head(0, 0);
+	Head(0);
 
 	setColor(standBackground,standFond);
 	clrPosition(1,35,45);
@@ -203,7 +210,7 @@ char MediaMenue (void)
 	clrRange(22,3);
 
 	clrPosition(4,20,80);	
-	Head((char)result, 0);
+	Head((char)result);
 
 	return result;
 }
@@ -264,7 +271,7 @@ char showDetailMenue (void)
 	result = correctInput(1, 3, 0, 22, 1);
 	clrRange(22,3);
 
-	Head(4, 0);
+	Head(4);
 
 	return result;
 }
@@ -316,7 +323,7 @@ int SortMenue (void)
 	result = correctInput(1, 16, 0, 17, 1);
 	clrRange(17,8);
 
-	Head(6, 0);
+	Head(6);
 	return result;
 }
 
@@ -351,7 +358,7 @@ char ChangeMenue (void)
 	Footer(1);
 	result = correctInput(1, 8, 0, 20, 1);
 	clrRange(20,5);
-	Head(8, 0);
+	Head(8);
 	return result;
 }
 
@@ -383,7 +390,7 @@ char SearchMenue (void)
 	result = correctInput(1, 6, 0, 21, 1);
 	clrRange(21,4);
 
-	Head(5, 0);
+	Head(5);
 	return result;
 }
 
@@ -414,6 +421,6 @@ char SearchMenueResult (void)
 	result = correctInput(1, 6, 0, 20, 1);
 	clrRange(20,5);
 
-	Head(7, 0);
+	Head(7);
 	return result;
 }
