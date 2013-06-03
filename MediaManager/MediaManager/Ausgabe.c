@@ -60,7 +60,8 @@ void showDetail (Details * Detail)
 	printf("Genre:\t%c\n",Detail->genre);
 	printf("Verlag:\t%s\n",Detail->verlag);
 	printf("Erscheinungsdatum:  %i.%i\t", nun->tm_mon, nun->tm_year);
-	printf("ISBN:  %",Detail->isbn);
+	// Formatierung der ISBN durch ganzahliges Teilen mit abs(Absolut)
+	// und den Angezeigten Anteil subtrahieren
 	ISBN = Detail->isbn;
 	printf("%i-", abs(ISBN/10000000000));
 	ISBN = ISBN - (double)(abs(ISBN/10000000000))*10000000000;
@@ -71,14 +72,16 @@ void showDetail (Details * Detail)
 	printf("%i-",abs(ISBN/10));
 	ISBN = ISBN -  (double)(abs(ISBN/10))*10;
 	printf("%i\n",abs(ISBN));
-	printf("Details:\n");
 
+	//Formatierung der Detail Text Ausgabe. So das Wörter Sauber getrennt 
+	// werden können und Text nicht ageschnitten wird
+	printf("Details:\n");
 	while(k <= 13 && start <=1023 && Detail->text[start + i] != 0 )
-	{
+	{ // vom Letzen Zeichen an an nach Leerzeichen suchen
 		for (i = 80; i >= 0; i--)
-		{
+		{ //Wenn Leerzeichen oder Ende Zeile erreicht
 			if (Detail->text[start + i] == ' ' || Detail->text[start + i] == 0 )
-			{
+			{//Zeile Printen
 				for (j = start; j< (start + i); j ++)
 				{
 					if (Detail->text[j] > 0)
@@ -87,15 +90,15 @@ void showDetail (Details * Detail)
 					}
 				}
 				if (i < 80)
-				{
+				{//new Line Wenn keine 80 Zeichen geprintet werden
 					printf("\n");
 				}
 				if (Detail->text[start + i] == 0)
-				{
+				{//wenn kein Text vorhanden ist
 					k = 14;
 				}
 				else
-				{
+				{// Anzahl ausgebenen Zeilen
 				k += 1;
 				}
 				start += (i+1);
@@ -104,7 +107,7 @@ void showDetail (Details * Detail)
 			else if (i == 0)
 			{
 				for (j = start; j< (start + 80); j ++)
-				{
+				{// Rest Text ausgeben
 					printf("%c",Detail->text[j]);
 				}
 				k += 1;
