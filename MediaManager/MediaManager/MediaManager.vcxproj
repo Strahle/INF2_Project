@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ausgabe.c" />
+    <ClCompile Include="Block.c" />
     <ClCompile Include="Eingabe.c" />
     <ClCompile Include="FileEdit.c" />
     <ClCompile Include="Liste.c" />
@@ -87,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ausgabe.h" />
+    <ClInclude Include="Block.h" />
     <ClInclude Include="Eingabe.h" />
     <ClInclude Include="FileEdit.h" />
     <ClInclude Include="Liste.h" />
