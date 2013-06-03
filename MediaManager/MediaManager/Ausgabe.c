@@ -32,6 +32,7 @@ void showGenere (void)
 //Zeigt eine Liste aller Titel an (auf einer Seite)
 void showList (Node * Knot , char prev)
 {
+	// muss auf null abfragen dann kotzt
 	int i,j = 1;
 	if (prev == 1)
 	{

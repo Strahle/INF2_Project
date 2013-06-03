@@ -3,16 +3,9 @@
 #include "Menue.h"
 #include <windows.h>
 
-	//SearchMenueResult ();
-	//ChangeMenue ();
-	//SearchMenue ();
-	//SortMenue();
-	//MediaMenue ();
-	//ListMenue ();
-	//showDetailMenue ();
 
-
-// Diese Funktion ermöglicht es durch übergabe der x und y Postion den Cursor frei zu setzen
+// Diese Funktion ermöglicht es durch übergabe der x und y Postion den Cursor 
+// auf eine beliebeige Stelle der Console zu setzen
 char gotoxy(int xpos, int ypos)
 {
     COORD scrn;    
@@ -22,7 +15,7 @@ char gotoxy(int xpos, int ypos)
 	return -1;
 } 
 
-// Diese Funktion löscht die Anzahl Zeilen(Space) von der übergebenen Zeile(Line) an
+// Diese Funktion löscht die übergene Anzahl an Zeilen inklusive der übergeben
 char clrRange(char Line, char space)
 {
 	int i;
@@ -51,7 +44,6 @@ char clrRange(char Line, char space)
 //13: Violett (Pink)
 //14: Hellgelb
 //15: Weiss
-
 char setColor(char backColor, char fondColor)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),	backColor * 16 + fondColor);
@@ -70,7 +62,9 @@ char clrPosition(char Line, char position ,char space)
 	return -1;
 }
    
-// Abfrage nach einlesen ob es ein erlaubter Wert für die Menue Listen ist
+//Die Funktion prüft nach Plausibilität dazu werden die Grenzen übergeben und
+//zusätzlich noch die Possition an der die Fehlermeldung erscheinen soll
+// Desweiteren ob bei der Funktion eine Zurück erlaubt ist.
 int correctInput(int min, int max, char posX, char posY, boolean back)
 {
 	int input;
@@ -98,7 +92,8 @@ int correctInput(int min, int max, char posX, char posY, boolean back)
 	return input;
 }
 
-//Hier wird die Kopfzeile und zurück und exit erzeugt
+//Hier werden die Sonderfunktion Zurück, Exit und Vor erzeugt und an die linke
+//untere Ecke Positioniert 
 char Footer(boolean back)
 {
 	setColor(sonderBackground,sonderFond);
@@ -117,7 +112,8 @@ char Footer(boolean back)
 	return;
 }
 
-//Hier wird die Kopfzeile und zurück und exit erzeugt
+//Hier wird die Baumstruktur erezugt
+// Dazu muss entsprechdnde Nummer des Menues übergeben werden
 char Head(char Number, boolean back)
 {
 	static int actPos = -10;
