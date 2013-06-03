@@ -21,7 +21,9 @@
 	#define MAX_VERLAG_LENGTH (50+1)
 
 	#include <stdlib.h>	
+	#include <string.h>
 
+	//Node Struct for List
 	typedef
 		struct strNode {
 			int pos;
@@ -30,6 +32,7 @@
 			struct strDetails * nodeDetails;
 		} Node;
 
+	//Details Struct for List Elements
 	typedef
 		struct strDetails {
 			unsigned int index;
@@ -42,9 +45,13 @@
 			char text[MAX_TEXT_LENGTH];
 		} Details;
 
-		
 	//Inits list with null
 	Node * initList ();
+	
+	//Returns ankerAnfang
+	Node * getAnkerAnfang(Node * myNode);
+	//Return ankerEnde
+	Node * getAnkerEnde(Node * myNode);
 
 	//Fügt am Ende der Liste ein neues Element hinzu
 	//Fügt der Datei den neuen Datensatz hinzu
@@ -54,30 +61,51 @@
 	//Löscht das Element aus der Liste
 	void deleteItem (Node * List);
 
-	//Frägt die zu suchenden Parameter ab
-	//Sucht in der Datei nach den Parametern
+	//Sucht in der Liste mit der Übergebenen Node nach 
 	//Speichert die Ergebnisse in einer Liste
-	Node * searchItem (char * Pfad);
+	Node * searchItem (Node * nNode, char * searchStr);
 
 	//Frägt das Element ab das geändert weren soll
 	//Frägt nach dem zu ändernden Parameter/n
 	//Ändert die Werte in der Datei
 	void changeItem (Node * nodeToChange, Details * newDetails);
 
-
 	//switchtes position of the nodes
 	void swapNodes(Node * node1 , Node * node2);
 
-
+	//Bubblesort for List
+	//Input: CompareFunction with Atribute Details and Return 
+	//0	The element pointed by p1 goes before the element pointed by p2
+	//>0	The element pointed by p1 goes after the element pointed by p2
 	void bubbleSortList(int (*compareFunction) (Details *,Details *));
 
+	//CompareFunctions for BubbleSortList
 	//Sortieren nach Index aufsteigend
 	int sortIndexAsc (Details * a, Details * b);
-	int sortIndexAsc (Details * a, Details * b);
-	int sortIsbnAsc (Details * a, Details * b);
+	//Sortieren nach Index absteigend
+	int sortIndexDesc (Details * a, Details * b);
+	//Sortieren nach Titel aufsteigend
 	int sortTitelAsc (Details * a, Details * b);
-
-	//Returns ankerAnfang
-	Node * getAnkerAnfang();
-
+	//Sortieren nach Titel absteigend
+	int sortTitelDesc (Details * a, Details * b);
+	//Sortieren nach Verlag aufsteigend
+	int sortVerlagAsc (Details * a, Details * b);
+	//Sortieren nach Verlag absteigend
+	int sortVerlagDesc (Details * a, Details * b);
+	//Sortieren nach Isbn aufsteigend
+	int sortIsbnAsc (Details * a, Details * b);
+	//Sortieren nach Isbn absteigend
+	int sortIsbnDesc (Details * a, Details * b);
+	//Sortieren nach Erscheinungsdatum aufsteigend
+	int sortErscheinungsdatumAsc (Details * a, Details * b);
+	//Sortieren nach Erscheinungsdatum absteigend
+	int sortErscheinungsdatumDesc (Details * a, Details * b);
+	//Sortieren nach Genere aufsteigend
+	int sortGenereAsc (Details * a, Details * b);
+	//Sortieren nach Genere absteigend
+	int sortGenereDesc (Details * a, Details * b);
+	//Sortieren nach Text aufsteigend
+	int sortTextAsc (Details * a, Details * b);
+	//Sortieren nach Text absteigend
+	int sortTextDesc (Details * a, Details * b);
 #endif

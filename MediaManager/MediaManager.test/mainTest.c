@@ -38,8 +38,9 @@ int main(void)
 
 	//Add Tests here
 	Test1 = CU_add_test(Suite1 , "Sortieren der Liste mit mit intSortList()",testIntSortList);
-	Test2 = CU_add_test(Suite1 , "Prüft ob das vertauschen von 2 elementen funktioniert",testSwitchNodes);
-	Test2 = CU_add_test(Suite1 , "System test",testListeSystem);
+	//Test2 = CU_add_test(Suite1 , "Prüft ob das vertauschen von 2 elementen funktioniert",testSwitchNodes);
+	//Test3 = CU_add_test(Suite1 , "System test",testListeSystem);
+	Test2 = CU_add_test(Suite1 , "System test",testSearchItem);
 	
 
 	//CU_automated_run_tests(); //stats an automated test

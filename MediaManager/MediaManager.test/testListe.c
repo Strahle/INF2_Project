@@ -61,14 +61,14 @@ Node * initListeWithNelements(int n, int randomPos)
 		myNode = addItem(myDetails);
 		myNode->pos = n;
 	}
-	return getAnkerAnfang();
+	return getAnkerAnfang(myNode);
 }
 
 
 void debugOutput(Node * ankerAnfang)
 {
 	int i=1;
-	Node * myNode = ankerAnfang;
+	Node * myNode = getAnkerAnfang(ankerAnfang);
 	printf("\n====\n");
 	while(myNode != NULL)
 	{
@@ -94,8 +94,8 @@ void testListeSystem(void)
 	test = (Details *) calloc(1,sizeof(Details));
 	test->index = 256;
 	initList();
-	initListeWithNelements(10, 1); //generate list
-	myNode = getAnkerAnfang();
+	myNode = initListeWithNelements(10, 1); //generate list
+	myNode = getAnkerAnfang(myNode);
 	addItem(test);
 	debugOutput(myNode);
 	testCheckListConsistence(myNode);
@@ -118,7 +118,26 @@ void testDeleteItem (void);
 //Frägt die zu suchenden Parameter ab
 //Sucht in der Datei nach den Parametern
 //Speichert die Ergebnisse in einer Liste
-void testSearchItem (void);
+void testSearchItem (void)
+{
+	Node * ankerAnfang, * foundNodes;
+	Details testDetails1, testDetails2, testDetails3;
+	strcpy_s(testDetails1.titel,sizeof(testDetails1.titel),"Hallo Welt\0");
+	strcpy_s(testDetails2.titel,sizeof(testDetails1.titel),"Hallo World\0");
+	strcpy_s(testDetails3.titel,sizeof(testDetails1.titel),"Geht das auch noch?????????? Hallo?\0");
+	testDetails1.index = 1337;
+	testDetails1.index = 31337;
+	testDetails1.index = 313373;
+	ankerAnfang = initListeWithNelements(10,1); //ini liste with 4 elements
+	addItem(&testDetails1);
+	addItem(&testDetails2);
+	addItem(&testDetails3);
+	debugOutput(ankerAnfang);
+	foundNodes = searchItem(ankerAnfang, "allo");
+	CU_ASSERT_PTR_NOT_EQUAL_FATAL(foundNodes, NULL);
+	debugOutput(foundNodes);
+
+}
 
 //Frägt das Element ab das geändert weren soll
 //Frägt nach dem zu ändernden Parameter/n
@@ -136,17 +155,18 @@ void testSwitchNodes(void)
 
 	swapNodes(ankerAnfang->next, ankerAnfang->next->next);
 	debugOutput(ankerAnfang);
-	testCheckListConsistence(getAnkerAnfang());
+	testCheckListConsistence(getAnkerAnfang(ankerAnfang));
 }
 
 void testIntSortList(void)
 {
 	Node * ankerAnfang;
 	
-	ankerAnfang = initListeWithNelements(30000,1); //ini liste with 4 elements
-	//debugOutput(ankerAnfang);
+	ankerAnfang = initListeWithNelements(10,1); //ini liste with 4 elements
+	debugOutput(ankerAnfang);
 	bubbleSortList(sortTitelAsc);
-	//debugOutput(ankerAnfang);
+	debugOutput(ankerAnfang);
+	getchar();
 }
 void testCharSortList(void)
 {
