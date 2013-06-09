@@ -37,6 +37,7 @@
 		struct strDetails {
 			unsigned int index;
 			char titel[TITLE_LENGTH];
+			char regisseur[TITLE_LENGTH];
 			char verlag[MAX_VERLAG_LENGTH];
 			double isbn;
 			time_t erscheinungsdatum;
