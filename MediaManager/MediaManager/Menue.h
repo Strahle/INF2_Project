@@ -128,7 +128,10 @@
 
 
 */
-			
+	
+#include <stdlib.h>
+#include <stdio.h>
+#include <windows.h>
 
 #pragma once
 #ifndef MENUE_H_
@@ -221,9 +224,5 @@
 	//5: Sortieren (Nur in der Suchdatei)
 	//99: Zurück zur Liste (Suchdatei Löschen)
 	//e: exit
-
-	char gotoxy(int xpos, int ypos);
-
-	char setColor(char backColor, char fondColor);
 
 #endif

@@ -20,6 +20,12 @@
 
 */
 #include "Liste.h"
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+#include <windows.h>
+
+
 
 #pragma once
 #ifndef AUSGABE_H_
@@ -31,7 +37,7 @@
 	void showList (Node * Knot);
 	//Zeigt eine Liste aller Titel an (auf einer Seite Bereich Zeile 3-21)
 
-	void showDetail (Details * List);
+	void showDetail (Details * List, int medium);
 	//Zeigt eine Liste mit den Details eines Elementes an (Bereich 3-22)
 
 #endif

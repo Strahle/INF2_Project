@@ -1,8 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "Menue.h"
-#include <windows.h>
-
 
 // Diese Funktion ermöglicht es durch übergabe der x und y Postion den Cursor 
 // auf eine beliebeige Stelle der Console zu setzen
@@ -65,48 +61,67 @@ char clrPosition(char Line, char position ,char space)
 //Die Funktion prüft nach Plausibilität dazu werden die Grenzen übergeben und
 //zusätzlich noch die Possition an der die Fehlermeldung erscheinen soll
 // Desweiteren ob bei der Funktion eine Zurück erlaubt ist.
-int correctInput(int min, int max, char posX, char posY, boolean back)
+// 0: Vor / Zurück / exit
+// 1: Zurück / exit
+// 2: exit
+int correctInput(int min, int max, char posX, char posY, int option)
 {
-	int input;
+	int input, falsch = 0;
 	gotoxy(0,0);
 	gotoxy(posX,posY + 1);
 	setColor(0,15);
 	scanf_s("%i", &input); fflush(stdin);
-	
-	while((input > max || (char)input < min) && (input !=99 || !back)) //
+
+	do
 	{
 		if(input == -1 ) 
+			{
+				exit(0);
+			}
+		else if (input > max || (char)input < min)
 		{
-			exit(0);
+			if ((input == 99 && option <=1 ) || ( input ==88 && option == 0))
+			{
+				falsch = 0;
+			}
+			else
+			{
+				falsch = 1;
+				clrRange(posY,1);
+				gotoxy(posX,posY);
+				setColor(fehlerBackground,fehlerFond);
+				printf("Nicht erlaubte Eingabe. Bitte nochmal eingeben.\n");
+				setColor(standBackground,standFond);
+				scanf_s("%i", &input); fflush(stdin);
+			}
 		}
-		else
-		{
-			clrRange(posY,1);
-			gotoxy(posX,posY);
-			setColor(fehlerBackground,fehlerFond);
-			printf("Nicht erlaubte Eingabe. Bitte nochmal eingeben.\n");
-			setColor(standBackground,standFond);
-			scanf_s("%i", &input); fflush(stdin);
-		}
-	}
+	}while(falsch);
 	return input;
 }
 
 //Hier werden die Sonderfunktion Zurück, Exit und Vor erzeugt und an die linke
 //untere Ecke Positioniert 
-char Footer(boolean back)
+// 0: Vor / Zurück / exit
+// 1: Zurück / exit
+// 2: exit
+char Footer(char option)
 {
 	setColor(sonderBackground,sonderFond);
-	if(back)
+	switch (option)
 	{
+	case 0:
+		gotoxy(43,24);
+		printf("88: vor");
+	case 1:
 		gotoxy(55,24);
 		printf("99: Zur\x81""ck\t");
-	}
-	else
-	{
+	case 2:
 		gotoxy(72,24);
+		printf("-1: exit\n");
+		break;
+	default:
+		break;
 	}
-	printf("-1: exit\n");
 
 	setColor(standBackground,standFond);
 	return;
@@ -205,8 +220,8 @@ char MediaMenue (void)
 	printf("2: CD's\t\t");
 	printf("3: DVD's\t\t\t\t");
 
-	Footer(0);
-	result = correctInput( 1, 3, 0, 22, 0);
+	Footer(2);
+	result = correctInput( 1, 3, 0, 22, 2);
 	clrRange(22,3);
 
 	clrPosition(4,20,80);	
@@ -240,8 +255,8 @@ char ListMenue (void)
 	printf("5: L\x94""schen\t");
 	printf("6: Sortieren\t\t\t\t");
 
-	Footer(1);
-	result = correctInput( 1, 6, 0, 21, 1);
+	Footer(0);
+	result = correctInput( 1, 6, 0, 21, 0);
 	clrRange(21,4);
 
 	return result;
@@ -417,8 +432,8 @@ char SearchMenueResult (void)
 	printf("5: Sortieren (in der Suchdatei)\t\t");
 	printf("6: Zur\x81""ck zur Liste (Suchdatei L\x94""schen)\t\t\t\t\t\t\t\t");
 
-	Footer(1);
-	result = correctInput(1, 6, 0, 20, 1);
+	Footer(0);
+	result = correctInput(1, 6, 0, 20, 0);
 	clrRange(20,5);
 
 	Head(7);

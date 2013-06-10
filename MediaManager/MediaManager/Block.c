@@ -7,7 +7,7 @@ Node * List;
 void init (void)
 {
 	initList(); //Darf keinen Rückgabewert mehr haben
-	//initFileEdit();
+	initFileEdit();
 }
 
 //Gibt bei Fehler 0 zurück
@@ -22,14 +22,17 @@ char Media (void)
 	{
 	case 0: return 1;
 	break;
-	case 1:
+	case 1: setFilePath ("Buecher.txt");
 	break;
-	case 2:
+	case 2: setFilePath ("CD.txt.");
 	break;
+	case 3: setFilePath ("DVD.txt.");
+	break;
+	case 'e': exit;
 	}
 }
 
-//Gbit bei Fehler 0 zurück
+//Gibt bei Fehler 0 zurück
 char Liste (void)
 {
 	//Listen Menü aufrufen
@@ -109,9 +112,27 @@ char search (void)
 
 }
 
+//Gibt bei Fehler 0 zurück
 char add (void)
 {
+	Details * Detail;
+	Node * Datensatz;
 
+	//Abfrage der Parameter
+	if ((Detail = addItemInput()) == NULL) //Kein Übergabeparameter
+		{
+			return 0;
+		}
+	//Datensetz in Liste einfügen
+	if ((Datensatz = addItem(Detail)) == NULL)
+	{
+		return 0;
+	}
+	//Speichert die aktuallisierte Liste in der Datei
+	if (savelist() == 0)
+	{
+		return 0;
+	}
 }
 
 char edit (void)
@@ -133,3 +154,34 @@ char back (void)
 {
 
 }
+
+//Gibt bei Fehler 0 zurück
+char savelist (void)
+{
+	Node * Datensatz;
+	Datensatz = getAnkerAnfang(List); //Warum Parameterübergabe?
+	while (Datensatz != NULL)
+	{
+		if (saveToFile (Datensatz -> nodeDetails ) == 0)
+		{
+			return 0;
+		}
+		Datensatz = Datensatz -> next;
+	}
+}
+
+char loadlist (void)
+{
+	while (addItem(loadFromFile()) != NULL)
+	{
+	}
+}
+
+char gotoxy(int xpos, int ypos)
+{
+    COORD scrn;    
+    HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
+    scrn.X = xpos; scrn.Y = ypos;
+    SetConsoleCursorPosition(hOuput,scrn);
+	return -1;
+} 
