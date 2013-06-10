@@ -222,4 +222,8 @@
 	//99: Zurück zur Liste (Suchdatei Löschen)
 	//e: exit
 
+	char gotoxy(int xpos, int ypos);
+
+	char setColor(char backColor, char fondColor);
+
 #endif
