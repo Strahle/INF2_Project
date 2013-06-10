@@ -1,17 +1,26 @@
-﻿Der Buildvorgang wurde am 10.06.2013 15:03:57 gestartet.
-     1>Projekt "H:\MediaManager\MediaManager\MediaManager.vcxproj" auf Knoten "2", Build Ziel(e).
+﻿Der Buildvorgang wurde am 10.06.2013 15:12:57 gestartet.
+     1>Projekt "C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" auf Knoten "2", Build Ziel(e).
      1>InitializeBuildStatus:
          Aktualisieren des Timestamps von "Debug\MediaManager.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Eingabe.c Tools.c
-         Tools.c
-     1>h:\mediamanager\mediamanager\tools.c(87): warning C4033: 'Footer' muss einen Wert zurückgeben
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Eingabe.c
          Eingabe.c
-     1>h:\mediamanager\mediamanager\eingabe.c(1216): error C2082: Neudefinition des formalen Parameters "medium"
-         Code wird generiert...
-     1>h:\mediamanager\mediamanager\tools.c(88): warning C4716: 'Footer': Muss einen Wert zurückgeben
-     1>Die Erstellung des Projekts "H:\MediaManager\MediaManager\MediaManager.vcxproj" ist abgeschlossen, Build Ziel(e) -- FEHLER.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\eingabe.c(539): warning C4716: 'addItemInput': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\eingabe.c(1721): warning C4716: 'searchItemInput': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\eingabe.c(1057): warning C4716: 'addoneItemInput': Muss einen Wert zurückgeben
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.lib" /MACHINE:X86 Debug\Ausgabe.obj
+         Debug\Block.obj
+         Debug\Eingabe.obj
+         Debug\FileEdit.obj
+         Debug\Liste.obj
+         Debug\main.obj
+         Debug\Menue.obj
+         Debug\Tools.obj
+     1>Block.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_initFileEdit" in Funktion "_init".
+     1>C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe : fatal error LNK1120: 1 nicht aufgelöste Externe
+     1>Die Erstellung des Projekts "C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" ist abgeschlossen, Build Ziel(e) -- FEHLER.
 
 Fehler beim Buildvorgang.
 
-Verstrichene Zeit 00:00:02.68
+Verstrichene Zeit 00:00:00.98

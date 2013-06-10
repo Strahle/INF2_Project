@@ -1213,7 +1213,7 @@ Details * searchItemInput (char medium)
 	struct tm * timeinfo;
 
 	char ele = '6';
-	char medium = 'd';
+	medium = 'd';
 
 	detail_new = (Details*) malloc (sizeof (Details));
 	timeinfo = (struct tm*) malloc (sizeof (struct tm));

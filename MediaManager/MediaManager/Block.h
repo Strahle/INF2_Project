@@ -12,8 +12,6 @@
 //Initialisiert alle Funktionen
 void init (void);
 
-
-
 char savelist (void);
 
 char loadlist (void);
