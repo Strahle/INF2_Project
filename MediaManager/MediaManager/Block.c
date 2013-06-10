@@ -41,6 +41,7 @@ char Media (void)
 	{
 		return 0;
 	}
+
 	List = getAnkerAnfang(List);
 
 	clrscreen();
@@ -162,7 +163,7 @@ char add (void)
 
 char edit (void)
 {
-		Details * Detail;
+	Details * Detail;
 	Node * Datensatz;
 
 	//Abfrage der Parameter
@@ -216,9 +217,16 @@ char savelist (void)
 
 char loadlist (void)
 {
+	Details * Detail;
 	initFileEdit();
-	while ((List = addItem(loadFromFile())) != NULL)
+	while (1)
 	{
+		Detail = loadFromFile();
+		if (Detail == NULL)
+		{
+			break;
+		}
+		List = addItem(Detail);
 	}
 }
 
