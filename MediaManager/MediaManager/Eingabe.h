@@ -10,10 +10,9 @@
 				- searchItemInput hinzugefügt
 				- in Liste.h wurde dem struct Betails ein neuer char regisseur, der den Regisseur, den Interpreten oder den Autor enthält
  - ToDo: 
-				- Verknüpfung exit und back müssen noch an den vorgegebenen Stellen eingefügt werden
-				- deleteItemInput muss richtig eingebunden werden
-				- Kopf muss noch eingefügt werden
-
+				-addouneItemInput zu changeItem ändern
+				-Details * changeItem (Node * Knot, char, char, char)
+				-Listenknoten, Index, Suchparameter, Medium
  ----------------------------------------------------------------------------
 */			
 #include <stdio.h>

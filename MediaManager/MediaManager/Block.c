@@ -15,17 +15,18 @@ void init (void)
 char Media (void)
 {
 	//Media Menü aufrufen
-	if (MediaMenue() == 1)
-		{
-			return 1;
-		}
+	if (MediaMenue() == 0)
+	{
+		return 0;
+	}
+
 	switch (askInput())
 	{
 	case 0: cMedia = 0;
-			return 1;
+			return 0;
 	break;
 	case 1: setFilePath ("Buecher.txt");
-			cMedia = 1;
+			cMedia = 'b';
 	break;
 	case 2: setFilePath ("CD.txt.");
 			cMedia = 2;
@@ -36,6 +37,11 @@ char Media (void)
 	case 'e': exit;
 	}
 
+	if (loadlist() == 0)
+	{
+		return 0;
+	}
+
 	clrscreen();
 }
 
@@ -43,9 +49,9 @@ char Media (void)
 char Liste (void)
 {
 	//Listen Menü aufrufen
-	if (ListMenue() == 1)
+	if (ListMenue() == 0)
 	{
-		return 1;
+		return 0;
 	}
 	
 	//Liste aufrufen
@@ -53,7 +59,7 @@ char Liste (void)
 
 	switch (askInput())
 	{
-	case 0: return 1;
+	case 0: return 0;
 	break;
 	case 1: if (search() == 0)
 			{
@@ -85,7 +91,7 @@ char Liste (void)
 				return 0;
 			}
 	break;
-	case 7: if (back() == 0)
+	case 7: if (0 == 0)
 			{
 				return 0;
 			}
@@ -115,7 +121,7 @@ char details (void)
 
 char askInput (void)
 {
-	char Input = 0;
+	int Input = 0;
 	gotoxy(0,0);
 	gotoxy(0,23);
 	setColor(0,15);
@@ -136,14 +142,16 @@ char add (void)
 
 	//Abfrage der Parameter
 	if ((Detail = addItemInput(cMedia)) == NULL)
-		{
-			return 0;
-		}
+	{
+		return 0;
+	}
+
 	//Datensetz in Liste einfügen
 	if ((Datensatz = addItem(Detail)) == NULL)
 	{
 		return 0;
 	}
+
 	//Speichert die aktuallisierte Liste in der Datei
 	if (savelist() == 0)
 	{
@@ -153,7 +161,26 @@ char add (void)
 
 char edit (void)
 {
+		Details * Detail;
+	Node * Datensatz;
 
+	//Abfrage der Parameter
+	if ((Detail = addItemInput(cMedia)) == NULL)
+	{
+		return 0;
+	}
+
+	//Datensetz in Liste einfügen
+	if ((Datensatz = addItem(Detail)) == NULL)
+	{
+		return 0;
+	}
+
+	//Speichert die aktuallisierte Liste in der Datei
+	if (savelist() == 0)
+	{
+		return 0;
+	}
 }
 
 char del (void)
@@ -166,16 +193,14 @@ char sort (void)
 
 }
 
-char back (void)
-{
-
-}
-
 //Gibt bei Fehler 0 zurück
 char savelist (void)
 {
 	Node * Datensatz;
-	void removeFile (void);
+	if (removeFile () == 0)
+	{
+		return 0;
+	}
 
 	Datensatz = getAnkerAnfang(List);
 	while (Datensatz != NULL)
