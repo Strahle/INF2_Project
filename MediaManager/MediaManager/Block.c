@@ -25,13 +25,13 @@ char Media (void)
 	case 0: cMedia = 0;
 			return 0;
 	break;
-	case 1: setFilePath ("Buecher.bin");
+	case 1: setFilePath ("Buecher.txt");
 			cMedia = 'b';
 	break;
-	case 2: setFilePath ("CD.bin");
+	case 2: setFilePath ("CD.txt.");
 			cMedia = 2;
 	break;
-	case 3: setFilePath ("DVD.bin");
+	case 3: setFilePath ("DVD.txt.");
 			cMedia = 3;
 	break;
 	case 'e': exit;
@@ -41,6 +41,7 @@ char Media (void)
 	{
 		return 0;
 	}
+	List = getAnkerAnfang(List);
 
 	clrscreen();
 }
@@ -147,7 +148,7 @@ char add (void)
 	}
 
 	//Datensetz in Liste einfügen
-	if ((Datensatz = addItem(Detail)) == NULL) //Return notwendig?
+	if ((List = addItem(Detail)) == NULL)
 	{
 		return 0;
 	}
@@ -161,7 +162,7 @@ char add (void)
 
 char edit (void)
 {
-	Details * Detail;
+		Details * Detail;
 	Node * Datensatz;
 
 	//Abfrage der Parameter
@@ -171,7 +172,7 @@ char edit (void)
 	}
 
 	//Datensetz in Liste einfügen
-	if ((Datensatz = addItem(Detail)) == NULL)
+	if ((List = addItem(Detail)) == NULL)
 	{
 		return 0;
 	}
@@ -216,7 +217,7 @@ char savelist (void)
 char loadlist (void)
 {
 	initFileEdit();
-	while (addItem(loadFromFile()) != NULL)
+	while ((List = addItem(loadFromFile())) != NULL)
 	{
 	}
 }

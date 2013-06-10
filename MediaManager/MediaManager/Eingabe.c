@@ -535,7 +535,7 @@ Details * addItemInput (char medium)
 		fflush(stdin);
 		strcpy_s(detail_new->text, sizeof(text) ,text);
 
-
+	return detail_new;
 	}
 
 
