@@ -1,24 +1,30 @@
-﻿Der Buildvorgang wurde am 10.06.2013 15:55:30 gestartet.
+﻿Der Buildvorgang wurde am 10.06.2013 16:21:19 gestartet.
      1>Projekt "C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" auf Knoten "2", Build Ziel(e).
      1>InitializeBuildStatus:
-         Aktualisieren des Timestamps von "Debug\MediaManager.unsuccessfulbuild".
+         "Debug\MediaManager.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Block.c
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Block.c Eingabe.c main.c
+         main.c
+         Eingabe.c
          Block.c
      1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(37): warning C4550: Ausdruck wird als Funktion ausgewertet, der eine Argumentliste fehlt
      1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(110): warning C4550: Ausdruck wird als Funktion ausgewertet, der eine Argumentliste fehlt
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(206): warning C4142: Neudefinition eines Typs ohne Auswirkungen
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(206): warning C4027: Funktion ohne Liste formaler Parameter deklariert
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(225): warning C4142: Neudefinition eines Typs ohne Auswirkungen
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(225): warning C4027: Funktion ohne Liste formaler Parameter deklariert
+         Code wird generiert...
      1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(46): warning C4715: "Media": Nicht alle Steuerelementpfade geben einen Wert zurück.
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(120): warning C4716: 'details': Muss einen Wert zurückgeben
      1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(115): warning C4715: "Liste": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(120): warning C4716: 'details': Muss einen Wert zurückgeben
      1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(135): warning C4716: 'search': Muss einen Wert zurückgeben
      1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(160): warning C4715: "add": Nicht alle Steuerelementpfade geben einen Wert zurück.
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(165): warning C4716: 'edit': Muss einen Wert zurückgeben
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(170): warning C4716: 'del': Muss einen Wert zurückgeben
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(175): warning C4716: 'sort': Muss einen Wert zurückgeben
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(203): warning C4716: 'loadlist': Muss einen Wert zurückgeben
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(195): warning C4715: "savelist": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(184): warning C4715: "edit": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(189): warning C4716: 'del': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(194): warning C4716: 'sort': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(214): warning C4715: "savelist": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(222): warning C4716: 'loadlist': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\eingabe.c(539): warning C4716: 'addItemInput': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\eingabe.c(1057): warning C4716: 'addoneItemInput': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\eingabe.c(1721): warning C4716: 'searchItemInput': Muss einen Wert zurückgeben
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.lib" /MACHINE:X86 Debug\Ausgabe.obj
          Debug\Block.obj
@@ -36,4 +42,4 @@
 
 Build erfolgreich.
 
-Verstrichene Zeit 00:00:01.07
+Verstrichene Zeit 00:00:02.91

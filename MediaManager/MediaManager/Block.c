@@ -25,13 +25,13 @@ char Media (void)
 	case 0: cMedia = 0;
 			return 0;
 	break;
-	case 1: setFilePath ("Buecher.txt");
+	case 1: setFilePath ("Buecher.bin");
 			cMedia = 'b';
 	break;
-	case 2: setFilePath ("CD.txt.");
+	case 2: setFilePath ("CD.bin");
 			cMedia = 2;
 	break;
-	case 3: setFilePath ("DVD.txt.");
+	case 3: setFilePath ("DVD.bin");
 			cMedia = 3;
 	break;
 	case 'e': exit;
@@ -147,7 +147,7 @@ char add (void)
 	}
 
 	//Datensetz in Liste einfügen
-	if ((Datensatz = addItem(Detail)) == NULL)
+	if ((Datensatz = addItem(Detail)) == NULL) //Return notwendig?
 	{
 		return 0;
 	}
@@ -161,7 +161,7 @@ char add (void)
 
 char edit (void)
 {
-		Details * Detail;
+	Details * Detail;
 	Node * Datensatz;
 
 	//Abfrage der Parameter
