@@ -30,6 +30,7 @@
 	Details * addoneItemInput (char , char );
 
 	Details *  addItemInput (char);
+	//Übergabe Medium (char (1=Buch, 2=cd, 3=dvd)
 	//Frägt die Werte für das neue Item ab
 	//Gibt bei falscher Eingabe Fehlermeldungen zurück
 	//Bei Abbruch oder kritischem Fehler wird NULL zurück gegeben
@@ -39,6 +40,7 @@
 	//Sicherheitsabfrage ob das Element wirklich gelöscht werden soll
 
 	Details *  searchItemInput (char);
+	//Übergabe Medium (char (b=Buch, c=cd, d=dvd)
 	//Frägt den/die Suchparameter ab
 
 #endif

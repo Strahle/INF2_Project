@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
-#include <windows.h>
+#include "Tools.h"
 
 
 
@@ -31,13 +31,10 @@
 #ifndef AUSGABE_H_
 	#define AUSGABE_H_
 
-	//void showGenere (void); Hier sollte man sich nochmal Gedanken machen ????? ToDO
-	//Zeigt eine Liste aller Genre an
-
-	void showList (Node * Knot);
+	char showList (Node * Knot);
 	//Zeigt eine Liste aller Titel an (auf einer Seite Bereich Zeile 3-21)
 
-	void showDetail (Details * List, int medium);
+	char showDetail (Details * List, char medium);
 	//Zeigt eine Liste mit den Details eines Elementes an (Bereich 3-22)
 
 #endif

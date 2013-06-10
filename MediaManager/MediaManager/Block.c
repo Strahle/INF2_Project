@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 Node * List;
+char cMedia;
 
 void init (void)
 {
@@ -20,16 +21,22 @@ char Media (void)
 		}
 	switch (askInput())
 	{
-	case 0: return 1;
+	case 0: cMedia = 0;
+			return 1;
 	break;
 	case 1: setFilePath ("Buecher.txt");
+			cMedia = 1;
 	break;
 	case 2: setFilePath ("CD.txt.");
+			cMedia = 2;
 	break;
 	case 3: setFilePath ("DVD.txt.");
+			cMedia = 3;
 	break;
 	case 'e': exit;
 	}
+
+	clrscreen();
 }
 
 //Gibt bei Fehler 0 zurück
@@ -83,6 +90,12 @@ char Liste (void)
 				return 0;
 			}
 	break;
+	case 88: 
+		if (Media() == 0)
+			{
+				return 0;
+			}
+	break;
 	case 99: if (Media() == 0)
 			{
 				return 0;
@@ -90,6 +103,9 @@ char Liste (void)
 	break;
 	case 'e': exit;
 	}
+
+	clrscreen();
+
 }
 
 char details (void)
@@ -119,7 +135,7 @@ char add (void)
 	Node * Datensatz;
 
 	//Abfrage der Parameter
-	if ((Detail = addItemInput()) == NULL) //Kein Übergabeparameter
+	if ((Detail = addItemInput(cMedia)) == NULL)
 		{
 			return 0;
 		}
@@ -159,7 +175,9 @@ char back (void)
 char savelist (void)
 {
 	Node * Datensatz;
-	Datensatz = getAnkerAnfang(List); //Warum Parameterübergabe?
+	void removeFile (void);
+
+	Datensatz = getAnkerAnfang(List);
 	while (Datensatz != NULL)
 	{
 		if (saveToFile (Datensatz -> nodeDetails ) == 0)
@@ -172,16 +190,38 @@ char savelist (void)
 
 char loadlist (void)
 {
+	initFileEdit();
 	while (addItem(loadFromFile()) != NULL)
 	{
 	}
 }
 
-char gotoxy(int xpos, int ypos)
+char clrscreen(char Line, char space)
 {
-    COORD scrn;    
-    HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
-    scrn.X = xpos; scrn.Y = ypos;
-    SetConsoleCursorPosition(hOuput,scrn);
+	int i;
+	gotoxy(0,4);
+	for (i = 1; i <= 25; i++)
+	{
+		printf("                                                                                ");
+	}
+	gotoxy(0,0);
 	return -1;
-} 
+}
+
+void vorBlaettern (void)
+{
+	char i;
+	for (i = 0; i < 10; i++)
+	{
+		List = List -> next;
+	}
+}
+
+void zurueckBlaettern (void)
+{
+	char i;
+	for (i = 0; i < 10; i++)
+	{
+		List = List -> prev;
+	}
+}

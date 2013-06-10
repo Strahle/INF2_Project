@@ -55,10 +55,8 @@
 	Node * getAnkerEnde(Node * myNode);
 
 	//Fügt am Ende der Liste ein neues Element hinzu
-	//Fügt der Datei den neuen Datensatz hinzu
 	Node * addItem (Details * nodeDetails);
 
-	//Löscht den Datensatz in der Datei
 	//Löscht das Element aus der Liste
 	void deleteItem (Node * List);
 
@@ -68,7 +66,6 @@
 
 	//Frägt das Element ab das geändert weren soll
 	//Frägt nach dem zu ändernden Parameter/n
-	//Ändert die Werte in der Datei
 	void changeItem (Node * nodeToChange, Details * newDetails);
 
 	//switchtes position of the nodes

@@ -85,6 +85,7 @@
     <ClCompile Include="Liste.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Menue.c" />
+    <ClCompile Include="Tools.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ausgabe.h" />
@@ -93,6 +94,7 @@
     <ClInclude Include="FileEdit.h" />
     <ClInclude Include="Liste.h" />
     <ClInclude Include="Menue.h" />
+    <ClInclude Include="Tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

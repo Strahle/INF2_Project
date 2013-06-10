@@ -1,132 +1,5 @@
 #include "Menue.h"
 
-// Diese Funktion ermöglicht es durch übergabe der x und y Postion den Cursor 
-// auf eine beliebeige Stelle der Console zu setzen
-char gotoxy(int xpos, int ypos)
-{
-    COORD scrn;    
-    HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
-    scrn.X = xpos; scrn.Y = ypos;
-    SetConsoleCursorPosition(hOuput,scrn);
-	return -1;
-} 
-
-// Diese Funktion löscht die übergene Anzahl an Zeilen inklusive der übergeben
-char clrRange(char Line, char space)
-{
-	int i;
-	gotoxy(0,Line);
-	for (i = 1; i <= space; i++)
-	{
-		printf("                                                                                ");
-	}
-	return -1;
-}
-
-// Diese Funktion legt die Hintergrund- und die Schriftfarbe fest
-//0 : Schwarz
-//1 : Dunkelblau (Blau)
-//2 : Dunkelgrün (Grün)
-//3 : Dunkeltürkis
-//4 : Dunkelrot (Rot)
-//5 : Dunkelviolett (DarkPink)
-//6 : Dunkelgelb
-//7 : Hellgrau
-//8 : Dunkelgrau
-//9 : Hellblau
-//10: Hellgrün
-//11: Türkis
-//12: Hellrot (Fehler-Rot ;) )
-//13: Violett (Pink)
-//14: Hellgelb
-//15: Weiss
-char setColor(char backColor, char fondColor)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),	backColor * 16 + fondColor);
-	return -1;
-}
-
-// Diese Funktion löscht die Anzahl Zeichen(Space) von der übergebenen Zeile(Line) und Position an
-char clrPosition(char Line, char position ,char space)
-{
-	int i;
-	gotoxy(position,Line);
-	for (i = 1; i <= space; i++)
-	{
-		printf(" ");
-	}
-	return -1;
-}
-   
-//Die Funktion prüft nach Plausibilität dazu werden die Grenzen übergeben und
-//zusätzlich noch die Possition an der die Fehlermeldung erscheinen soll
-// Desweiteren ob bei der Funktion eine Zurück erlaubt ist.
-// 0: Vor / Zurück / exit
-// 1: Zurück / exit
-// 2: exit
-int correctInput(int min, int max, char posX, char posY, int option)
-{
-	int input, falsch = 0;
-	gotoxy(0,0);
-	gotoxy(posX,posY + 1);
-	setColor(0,15);
-	scanf_s("%i", &input); fflush(stdin);
-
-	do
-	{
-		if(input == -1 ) 
-			{
-				exit(0);
-			}
-		else if (input > max || (char)input < min)
-		{
-			if ((input == 99 && option <=1 ) || ( input ==88 && option == 0))
-			{
-				falsch = 0;
-			}
-			else
-			{
-				falsch = 1;
-				clrRange(posY,1);
-				gotoxy(posX,posY);
-				setColor(fehlerBackground,fehlerFond);
-				printf("Nicht erlaubte Eingabe. Bitte nochmal eingeben.\n");
-				setColor(standBackground,standFond);
-				scanf_s("%i", &input); fflush(stdin);
-			}
-		}
-	}while(falsch);
-	return input;
-}
-
-//Hier werden die Sonderfunktion Zurück, Exit und Vor erzeugt und an die linke
-//untere Ecke Positioniert 
-// 0: Vor / Zurück / exit
-// 1: Zurück / exit
-// 2: exit
-char Footer(char option)
-{
-	setColor(sonderBackground,sonderFond);
-	switch (option)
-	{
-	case 0:
-		gotoxy(43,24);
-		printf("88: vor");
-	case 1:
-		gotoxy(55,24);
-		printf("99: Zur\x81""ck\t");
-	case 2:
-		gotoxy(72,24);
-		printf("-1: exit\n");
-		break;
-	default:
-		break;
-	}
-
-	setColor(standBackground,standFond);
-	return;
-}
-
 //Hier wird die Baumstruktur erezugt
 // Dazu muss entsprechdnde Nummer des Menues übergeben werden
 //	0: Header Media Manger
@@ -200,8 +73,6 @@ char Head(char Number)
 //3: DVD's
 char MediaMenue (void)
 {
-	int result;
-
 	Head(0);
 
 	setColor(standBackground,standFond);
@@ -213,7 +84,6 @@ char MediaMenue (void)
 	gotoxy(20,4);
 	printf("In Welchem Medientyp wollen sie suchen?");
 
-
 	gotoxy(0,24);
 	setColor(menueBackground,menueFond);
 	printf("1: B\x81""cher\t");
@@ -221,13 +91,8 @@ char MediaMenue (void)
 	printf("3: DVD's\t\t\t\t");
 
 	Footer(2);
-	result = correctInput( 1, 3, 0, 22, 2);
-	clrRange(22,3);
 
-	clrPosition(4,20,80);	
-	Head((char)result);
-
-	return result;
+	return 1;
 }
 
 //Menü für die Optionen der Listenanzeige
@@ -240,8 +105,6 @@ char MediaMenue (void)
 //7: Genre Auswahl
 char ListMenue (void)
 {
-	int result;
-
 	clrPosition(1,35,45);
 	gotoxy(35,1);
 	printf("Listenanzeige");	
@@ -256,10 +119,8 @@ char ListMenue (void)
 	printf("6: Sortieren\t\t\t\t");
 
 	Footer(0);
-	result = correctInput( 1, 6, 0, 21, 0);
-	clrRange(21,4);
 
-	return result;
+	return 1;
 }
 
 //Menü für die Optionen der Detailanzeige
@@ -270,7 +131,6 @@ char ListMenue (void)
 //e: exit
 char showDetailMenue (void)
 {
-	int result;
 
 	clrPosition(1,35,45);
 	gotoxy(35,1);
@@ -283,12 +143,8 @@ char showDetailMenue (void)
 	printf("3: L\x94""schen\t\t\t");
 
 	Footer(1);
-	result = correctInput(1, 3, 0, 22, 1);
-	clrRange(22,3);
 
-	Head(4);
-
-	return result;
+	return 1;
 }
 
 //Menü für die Optionen der Sortierfunktion
@@ -307,7 +163,6 @@ char showDetailMenue (void)
 //16: Schauspieler aufwärts
 int SortMenue (void)
 {
-	int result;
 
 	clrPosition(1,35,45);
 	gotoxy(35,1);
@@ -335,11 +190,8 @@ int SortMenue (void)
 	printf("16: Schauspieler\t\t\t");
 
 	Footer(1);
-	result = correctInput(1, 16, 0, 17, 1);
-	clrRange(17,8);
 
-	Head(6);
-	return result;
+	return 1;
 }
 
 //Menü für die Optionen zum ändern
@@ -353,7 +205,6 @@ int SortMenue (void)
 //8: Genre
 char ChangeMenue (void)
 {
-	int result;
 
 	clrPosition(1,35,45);
 	gotoxy(35,1);
@@ -371,10 +222,8 @@ char ChangeMenue (void)
 	printf("8: Genre\t\t\t\t\t\t\t\t");
 
 	Footer(1);
-	result = correctInput(1, 8, 0, 20, 1);
-	clrRange(20,5);
-	Head(8);
-	return result;
+
+	return 1;
 }
 
 //Menü für die Optionen der Suche
@@ -386,7 +235,6 @@ char ChangeMenue (void)
 //6: Schauspieler
 char SearchMenue (void)
 {
-	int result;
 
 	clrPosition(1,35,45);
 	gotoxy(35,1);
@@ -402,11 +250,8 @@ char SearchMenue (void)
 	printf("6: Schauspieler\t\t\t");
 
 	Footer(1);
-	result = correctInput(1, 6, 0, 21, 1);
-	clrRange(21,4);
 
-	Head(5);
-	return result;
+	return 1;
 }
 
 //1: Suchen
@@ -417,7 +262,6 @@ char SearchMenue (void)
 //6: Zurück zur Liste (Suchdatei Löschen)
 char SearchMenueResult (void)
 {
-	int result;
 
 	clrPosition(1,35,45);
 	gotoxy(35,1);
@@ -433,9 +277,6 @@ char SearchMenueResult (void)
 	printf("6: Zur\x81""ck zur Liste (Suchdatei L\x94""schen)\t\t\t\t\t\t\t\t");
 
 	Footer(0);
-	result = correctInput(1, 6, 0, 20, 0);
-	clrRange(20,5);
 
-	Head(7);
-	return result;
+	return 1;
 }

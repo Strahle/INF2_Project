@@ -7,13 +7,12 @@
 #include "FileEdit.h"
 #include "Liste.h"
 #include "Menue.h"
+#include "Tools.h"
 
 //Initialisiert alle Funktionen
 void init (void);
 
-// Diese Funktion ermöglicht es durch übergabe der x und y Postion den Cursor 
-// auf eine beliebeige Stelle der Console zu setzen
-char gotoxy(int xpos, int ypos);
+
 
 char savelist (void);
 
@@ -39,6 +38,9 @@ char details (void);
 char Liste (void);
 
 char Media (void);
+
+//Löscht den Bildschirm
+void clrscreen(void);
 
 
 

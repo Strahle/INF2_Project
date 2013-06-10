@@ -1,58 +1,8 @@
 //test
 #include "Ausgabe.h"
 
-// Diese Funktion ermöglicht es durch übergabe der x und y Postion den Cursor 
-// auf eine beliebeige Stelle der Console zu setzen
-char gotoxy(int xpos, int ypos)
-{
-    COORD scrn;    
-    HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
-    scrn.X = xpos; scrn.Y = ypos;
-    SetConsoleCursorPosition(hOuput,scrn);
-	return -1;
-} 
-
-// Diese Funktion löscht die übergene Anzahl an Zeilen inklusive der übergeben
-char clrRange(char Line, char space)
-{
-	int i;
-	gotoxy(0,Line);
-	for (i = 1; i <= space; i++)
-	{
-		printf("                                                                                ");
-	}
-	return -1;
-}
-
-
-
-//Zeigt eine Liste aller Genere an
-void showGenere (void)
-{
-	
-	/*Details * myDetails=NULL;
-	struct tm * nun = NULL;
-
-		nun = (struct tm *) calloc(1,sizeof(struct tm));
-		myDetails = (Details *) calloc(1,sizeof(Details));
-
-		nun->tm_mon = 10;
-		nun->tm_year = 113; 
-
-		strcpy_s(myDetails->titel,sizeof(myDetails->titel),"Ich bin ein test um zu gucken ob es geht.23456789");
-		strcpy_s(myDetails->text,sizeof(myDetails->text),"So jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir bei achtzig zeichenSo jetzt schreibe ich mal ein paar zeichen und guck wann wir");
-		strcpy_s(myDetails->text,sizeof(myDetails->text),"So jetzt schreibe ich mal ein paar zeichen und guck wann wir");
-		strcpy_s(myDetails->verlag,sizeof(myDetails->verlag),"Ich bin der Werner Heissenberg Verlag und Kokse be");
-		myDetails->isbn = 1234567890123;
-		myDetails->genre = '1';
-		myDetails->erscheinungsdatum = mktime(nun);
-
-		showDetail(myDetails);*/
-
-}
-
 //Zeigt eine Liste aller Titel an (auf einer Seite)
-void showList (Node * Knot , char prev)
+char showList (Node * Knot , char prev)
 {
 	int i;
 	gotoxy(0,4);
@@ -72,11 +22,11 @@ void showList (Node * Knot , char prev)
 			}
 		}
 	}
-
+	return 1;
 }
 
 //Zeigt eine Liste mit den Details eines Elementes an
-void showDetail (Details * Detail, int medium)
+char showDetail (Details * Detail, char medium)
 {
 	int i=0, j,k = 0, start = 0, Test;
 	double  ISBN;
@@ -96,36 +46,39 @@ void showDetail (Details * Detail, int medium)
 	switch (medium)
 	{
 	case 1 :
+		printf("Author: %s\t",Detail->regisseur);
 		switch (Detail->genre)
 		{
 		case 1 :
-			printf("Genre:\tAbenteuer\n");
+			printf("Genre: Abenteuer\n");
 			break;
 		case 2 :
-			printf("Genre:\tThriller\n");
+			printf("Genre: Thriller\n");
 			break;
 		case 3 :
-			printf("Genre:\tSachbuch\n");
+			printf("Genre: Sachbuch\n");
 			break;
 		case 4 :
-			printf("Genre:\tBiographie\n");
+			printf("Genre: tBiographie\n");
 			break;
 		case 5 :
-			printf("Genre:\tComic\n");
+			printf("Genre: tComic\n");
 			break;
 		case 6 :
-			printf("Genre:\tKinderbuch\n");
+			printf("Genre: Kinderbuch\n");
 			break;
 		case 7:
-			printf("Genre:\tMaerchen\n");
+			printf("Genre: Maerchen\n");
 			break;
 		case 8 :
-			printf("Genre:\tGedicht\n");
+			printf("Genre: Gedicht\n");
 			break;
 		}
+		printf("Verlag:\t%s\n",Detail->verlag);
 		break;
 
 	case 2 :
+		printf("Interpret: %s\t",Detail->regisseur);
 		switch (Detail->genre)
 		{
 		case 1 :
@@ -153,9 +106,11 @@ void showDetail (Details * Detail, int medium)
 			printf("Genre:\tHip-Hop\n");
 			break;
 		}
+		printf("Label:\t%s\n",Detail->verlag);
 		break;
 
 	case 3 :
+		printf("Regisseur: %s\t",Detail->regisseur);
 		switch (Detail->genre)
 		{
 		case 1 :
@@ -183,9 +138,9 @@ void showDetail (Details * Detail, int medium)
 			printf("Genre:\tAbenteuer\n");
 			break;
 		}
+		printf("Studio:\t%s\n",Detail->verlag);
 		break;
 	}
-	printf("Verlag:\t%s\n",Detail->verlag);
 	printf("Erscheinungsdatum:  %i.%i.%i\t",nun->tm_mday, nun->tm_mon + 1, nun->tm_year + 1900);
 	// Formatierung der ISBN durch ganzahliges Teilen mit abs(Absolut)
 	// und den Angezeigten Anteil subtrahieren
@@ -243,4 +198,5 @@ void showDetail (Details * Detail, int medium)
 			}
 		}
 	}
+	return 1;
 }

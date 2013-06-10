@@ -1,37 +1,17 @@
-﻿Build started 30.05.2013 23:00:45.
-Project "C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" on node 2 (Build target(s)).
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Ausgabe.c Eingabe.c FileEdit.c Liste.c main.c Menue.c
-  Menue.c
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\menue.c(117): warning C4033: 'Footer' must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\menue.c(176): warning C4033: 'Head' must return a value
-  main.c
-  Liste.c
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\liste.c(79): warning C4101: 'i' : unreferenced local variable
-  FileEdit.c
-  Eingabe.c
-  Ausgabe.c
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\ausgabe.c(41): warning C4029: declared formal parameter list different from definition
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\ausgabe.c(48): warning C4552: '+' : operator has no effect; expected operator with side-effect
-  Generating Code...
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(13): warning C4716: 'saveToFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(17): warning C4716: 'loadFromFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(21): warning C4716: 'printListeToFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(25): warning C4716: 'sortFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\fileedit.c(29): warning C4716: 'searchInFile' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\liste.c(213): warning C4716: 'sortList' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\menue.c(118): warning C4716: 'Footer' : must return a value
-c:\users\ulf\source\repos\inf2_project\mediamanager\mediamanager\menue.c(177): warning C4716: 'Head' : must return a value
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.lib" /MACHINE:X86 Debug\Ausgabe.obj
-  Debug\Eingabe.obj
-  Debug\FileEdit.obj
-  Debug\Liste.obj
-  Debug\main.obj
-  Debug\Menue.obj
-  MediaManager.vcxproj -> C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe
-Done Building Project "C:\Users\Ulf\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" (Build target(s)).
+﻿Der Buildvorgang wurde am 10.06.2013 15:03:57 gestartet.
+     1>Projekt "H:\MediaManager\MediaManager\MediaManager.vcxproj" auf Knoten "2", Build Ziel(e).
+     1>InitializeBuildStatus:
+         Aktualisieren des Timestamps von "Debug\MediaManager.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Eingabe.c Tools.c
+         Tools.c
+     1>h:\mediamanager\mediamanager\tools.c(87): warning C4033: 'Footer' muss einen Wert zurückgeben
+         Eingabe.c
+     1>h:\mediamanager\mediamanager\eingabe.c(1216): error C2082: Neudefinition des formalen Parameters "medium"
+         Code wird generiert...
+     1>h:\mediamanager\mediamanager\tools.c(88): warning C4716: 'Footer': Muss einen Wert zurückgeben
+     1>Die Erstellung des Projekts "H:\MediaManager\MediaManager\MediaManager.vcxproj" ist abgeschlossen, Build Ziel(e) -- FEHLER.
 
-Build succeeded.
+Fehler beim Buildvorgang.
 
-Time Elapsed 00:00:01.32
+Verstrichene Zeit 00:00:02.68

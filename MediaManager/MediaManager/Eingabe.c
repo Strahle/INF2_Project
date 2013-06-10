@@ -45,7 +45,7 @@
 //	return;
 //}
 
-/*Diese Funktion fragt alle Items für einen neuen Struct ab. Benötigt wird ein char, welches das Medium übergibt*/
+//Diese Funktion fragt alle Items für einen neuen Struct ab. Benötigt wird ein char, welches das Medium übergibt*/
 Details * addItemInput (char medium)
 {	
 	time_t rawtime;

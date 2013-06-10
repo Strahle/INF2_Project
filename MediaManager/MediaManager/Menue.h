@@ -11,127 +11,51 @@
 		MediaMenue
 			Diese Funktion erzeugt Links oben den Programm Namen und am unteren 
 			Rand die passenden Auswahloptionen und erzeugt den Abfrage Text.
-			Liest die Eingabe über die Funktion correkt Input ein und gibt das 
-			Resultat als char zurück. Sie ruft desweiteren die Funktion Footer auf 
-			um die Sonderfunktionen zu erhalten. Und die Funktion Head um die 
-			Baumstruktur in der 3. Zeile zu erhalten
-
-				#### muss Samuel in seiner Merge Funktion so ähnlich aufrufen ###
-				Aktuell wird auch noch die Eingabe abgefragt und auf plausibilität
-				geprüft mit der Funktion correctInput
-				Desweiteren erzeugt die Funktion Footer die passenden Sonder
-				Funktionen: exit / zurück / (vorwärts fehlt noch)
-				Und die Funktion Header erzeugt das Baum Menü um zu wissen wo man 
-				sich gerade Befindet.
-				#### muss Samuel in seinem Merge Funktion so ähnlich aufrufen ###
+			Sie ruft desweiteren die Funktion Footer auf um die Sonderfunktionen 
+			zu erhalten.
 
 		ListMenue
 			Diese Funktion erzeugt in der 2. Zeile mittig den Menuenamen und am 
 			unteren Rand Rand die passenden Auswahloptionen. 
-			Liest die Eingabe über die Funktion correkt Input ein und gibt das Resultat 
-			als char zurück. Sie ruft desweiteren die Funktion Footer auf um die 
+			Sie ruft desweiteren die Funktion Footer auf um die 
 			Sonderfunktionen zu erhalten. 
-
-				#### muss Samuel in seiner Merge Funktion so ähnlich aufrufen ###
-				Aktuell wird auch noch die Eingabe abgefragt und auf plausibilität
-				geprüft mit der Funktion correctInput
-				Desweiteren erzeugt die Funktion Footer die passenden Sonder
-				Funktionen: exit / zurück / (vorwärts fehlt noch)
-				Und die Funktion Header erzeugt das Baum Menü um zu wissen wo man 
-				sich gerade Befindet.
-				#### muss Samuel in seinem Merge Funktion so ähnlich aufrufen ###
 			
 		showDetailMenue
 			Diese Funktion erzeugt in der 2. Zeile mittig den Menuenamen und am 
 			unteren Rand Rand die passenden Auswahloptionen. 
-			Liest die Eingabe über die Funktion correkt Input ein und gibt das Resultat 
-			als char zurück. Sie ruft desweiteren die Funktion Footer auf um die 
-			Sonderfunktionen zu erhalten. Und die Funktion Head um die 
-			Baumstruktur in der 3. Zeile zu erhalten
-
-				#### muss Samuel in seiner Merge Funktion so ähnlich aufrufen ###
-				Aktuell wird auch noch die Eingabe abgefragt und auf plausibilität
-				geprüft mit der Funktion correctInput
-				Desweiteren erzeugt die Funktion Footer die passenden Sonder
-				Funktionen: exit / zurück / (vorwärts fehlt noch)
-				Und die Funktion Header erzeugt das Baum Menü um zu wissen wo man 
-				sich gerade Befindet.
-				#### muss Samuel in seinem Merge Funktion so ähnlich aufrufen ###
+			Sie ruft desweiteren die Funktion Footer auf um die Sonderfunktionen 
+			zu erhalten. 
 
 		sortMenue
 			Diese Funktion erzeugt in der 2. Zeile mittig den Menuenamen und am 
 			unteren Rand Rand die passenden Auswahloptionen. 
-			Liest die Eingabe über die Funktion correkt Input ein und gibt das Resultat 
-			als char zurück. Sie ruft desweiteren die Funktion Footer auf um die 
-			Sonderfunktionen zu erhalten. Und die Funktion Head um die 
-			Baumstruktur in der 3. Zeile zu erhalten
-
-				#### muss Samuel in seiner Merge Funktion so ähnlich aufrufen ###
-				Aktuell wird auch noch die Eingabe abgefragt und auf plausibilität
-				geprüft mit der Funktion correctInput
-				Desweiteren erzeugt die Funktion Footer die passenden Sonder
-				Funktionen: exit / zurück / (vorwärts fehlt noch)
-				Und die Funktion Header erzeugt das Baum Menü um zu wissen wo man 
-				sich gerade Befindet.
-				#### muss Samuel in seinem Merge Funktion so ähnlich aufrufen ###
+			Sie ruft desweiteren die Funktion Footer auf um die Sonderfunktionen 
+			zu erhalten.
 
 		changeMenue
 			Diese Funktion erzeugt in der 2. Zeile mittig den Menuenamen und am 
 			unteren Rand Rand die passenden Auswahloptionen. 
-			Liest die Eingabe über die Funktion correkt Input ein und gibt das Resultat 
-			als char zurück. Sie ruft desweiteren die Funktion Footer auf um die 
-			Sonderfunktionen zu erhalten. Und die Funktion Head um die 
-			Baumstruktur in der 3. Zeile zu erhalten
-
-				#### muss Samuel in seiner Merge Funktion so ähnlich aufrufen ###
-				Aktuell wird auch noch die Eingabe abgefragt und auf plausibilität
-				geprüft mit der Funktion correctInput
-				Desweiteren erzeugt die Funktion Footer die passenden Sonder
-				Funktionen: exit / zurück / (vorwärts fehlt noch)
-				Und die Funktion Header erzeugt das Baum Menü um zu wissen wo man 
-				sich gerade Befindet.
-				#### muss Samuel in seinem Merge Funktion so ähnlich aufrufen ###
+			Sie ruft desweiteren die Funktion Footer auf um die Sonderfunktionen 
+			zu erhalten. 
 
 		SearchMenue
 			Diese Funktion erzeugt in der 2. Zeile mittig den Menuenamen und am 
 			unteren Rand Rand die passenden Auswahloptionen. 
-			Liest die Eingabe über die Funktion correkt Input ein und gibt das Resultat 
-			als char zurück. Sie ruft desweiteren die Funktion Footer auf um die 
-			Sonderfunktionen zu erhalten. Und die Funktion Head um die 
-			Baumstruktur in der 3. Zeile zu erhalten
-
-				#### muss Samuel in seiner Merge Funktion so ähnlich aufrufen ###
-				Aktuell wird auch noch die Eingabe abgefragt und auf plausibilität
-				geprüft mit der Funktion correctInput
-				Desweiteren erzeugt die Funktion Footer die passenden Sonder
-				Funktionen: exit / zurück / (vorwärts fehlt noch)
-				Und die Funktion Header erzeugt das Baum Menü um zu wissen wo man 
-				sich gerade Befindet.
-				#### muss Samuel in seinem Merge Funktion so ähnlich aufrufen ###
+			Sie ruft desweiteren die Funktion Footer auf um die Sonderfunktionen 
+			zu erhalten. 
 
 		SearchMenueResult
 			Diese Funktion erzeugt in der 2. Zeile mittig den Menuenamen und am 
 			unteren Rand Rand die passenden Auswahloptionen. 
-			Liest die Eingabe über die Funktion correkt Input ein und gibt das Resultat 
-			als char zurück. Sie ruft desweiteren die Funktion Footer auf um die 
-			Sonderfunktionen zu erhalten. Und die Funktion Head um die 
-			Baumstruktur in der 3. Zeile zu erhalten
-
-				#### muss Samuel in seiner Merge Funktion so ähnlich aufrufen ###
-				Aktuell wird auch noch die Eingabe abgefragt und auf plausibilität
-				geprüft mit der Funktion correctInput
-				Desweiteren erzeugt die Funktion Footer die passenden Sonder
-				Funktionen: exit / zurück / (vorwärts fehlt noch)
-				Und die Funktion Header erzeugt das Baum Menü um zu wissen wo man 
-				sich gerade Befindet.
-				#### muss Samuel in seinem Merge Funktion so ähnlich aufrufen ###
-
+			Sie ruft desweiteren die Funktion Footer auf um die 
+			Sonderfunktionen zu erhalten.
 
 */
 	
 #include <stdlib.h>
 #include <stdio.h>
-#include <windows.h>
+#include "Tools.h"
+
 
 #pragma once
 #ifndef MENUE_H_
@@ -147,11 +71,10 @@
 	#define sonderFond (9) 
 
 	char MediaMenue (void);
-	//Menü für die Auswahl des Genre // ich muss als Buch Liste ausshen
+	//Menü für die Auswahl des Genre
 	//1: Bücher
 	//2: CD's
 	//3: DVD's
-	//e: exit
 
 	char ListMenue (void );
 	//Menü für die Optionen der Listenanzeige
@@ -161,7 +84,8 @@
 	//4: Ändern
 	//5: Löschen
 	//6: Sortieren
-	//7: Genre Auswahl
+	//7: Media Auswahl
+	//88: vor
 	//99: zurück
 	//e: exit
 
@@ -222,6 +146,7 @@
 	//3: Ändern
 	//4: Löschen
 	//5: Sortieren (Nur in der Suchdatei)
+	//88: vor
 	//99: Zurück zur Liste (Suchdatei Löschen)
 	//e: exit
 
