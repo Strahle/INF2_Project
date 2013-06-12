@@ -3,6 +3,21 @@
 static Node * ankerAnfang=NULL, * ankerEnde=NULL;
 static Node * actualPos; //Hier ist das Aktuelle Element gespeichert
 
+Node * searchForIndex (Node * Knot, int Index)
+{
+	Node * Element;
+	Element = getAnkerAnfang(Knot);
+	while (Element != NULL)
+	{
+		if (Element -> nodeDetails -> index == Index)
+		{
+			return Element;
+		}
+		Element = Element -> next;
+	}
+	return NULL;
+}
+
 //löscht alle elemente in der liste
 //Setzt anker Anfang/Ende auf Null;
 void deinit(Node * delList)

@@ -1,129 +1,22 @@
-﻿Der Buildvorgang wurde am 11.06.2013 12:20:00 gestartet.
-     1>Projekt "M:\MediaManager\MediaManager\MediaManager.vcxproj" auf Knoten "2", Build Ziel(e).
+﻿Der Buildvorgang wurde am 12.06.2013 23:27:31 gestartet.
+     1>Projekt "C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" auf Knoten "2", Build Ziel(e).
      1>ClCompile:
-         A:\Programme\VisualStudio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Block.c Eingabe.c main.c
-         main.c
-     1>m:\mediamanager\mediamanager\eingabe.h(32): warning C4031: Die zweite Liste formaler Parameter ist länger als die erste Liste
-     1>m:\mediamanager\mediamanager\eingabe.h(32): warning C4028: Formaler Parameter '2' unterscheidet sich von der Deklaration
-     1>m:\mediamanager\mediamanager\eingabe.h(32): error C2040: 'changeItem': 'Details *(Node *,char,char,char)' unterscheidet sich von 'Details *(Node *,char,char,char)' in Bezug auf die Anzahl vorgenommener Dereferenzierungen
-         Eingabe.c
-     1>m:\mediamanager\mediamanager\eingabe.h(32): warning C4031: Die zweite Liste formaler Parameter ist länger als die erste Liste
-     1>m:\mediamanager\mediamanager\eingabe.h(32): warning C4028: Formaler Parameter '2' unterscheidet sich von der Deklaration
-     1>m:\mediamanager\mediamanager\eingabe.h(32): error C2040: 'changeItem': 'Details *(Node *,char,char,char)' unterscheidet sich von 'Details *(Node *,char,char,char)' in Bezug auf die Anzahl vorgenommener Dereferenzierungen
-     1>m:\mediamanager\mediamanager\eingabe.c(637): error C2198: "gotoxy": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(649): error C2143: Syntaxfehler: Es fehlt ';' vor 'Konstante'
-     1>m:\mediamanager\mediamanager\eingabe.c(649): warning C4550: Ausdruck wird als Funktion ausgewertet, der eine Argumentliste fehlt
-     1>m:\mediamanager\mediamanager\eingabe.c(677): error C2143: Syntaxfehler: Es fehlt ';' vor 'Konstante'
-     1>m:\mediamanager\mediamanager\eingabe.c(677): warning C4550: Ausdruck wird als Funktion ausgewertet, der eine Argumentliste fehlt
-     1>m:\mediamanager\mediamanager\eingabe.c(1075): error C2046: Schlüsselwort 'case' ungültig
-     1>m:\mediamanager\mediamanager\eingabe.c(1115): error C2059: Syntaxfehler: '}'
-     1>m:\mediamanager\mediamanager\eingabe.c(1317): warning C4029: Deklarierte Liste formaler Parameter weicht von der Definition ab
-     1>m:\mediamanager\mediamanager\eingabe.c(1325): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1325): warning C4047: '=': Anzahl der Dereferenzierungen bei 'int' und 'Details *' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1345): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1345): error C2223: Der linke Teil von '->titel' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1345): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'char *' und 'unsigned int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1345): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 1
-     1>m:\mediamanager\mediamanager\eingabe.c(1345): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char [51]' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1345): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1345): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1359): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1359): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1366): error C2065: 'MAX_regisseur_LENGTH': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1366): error C2057: Konstanter Ausdruck erwartet
-     1>m:\mediamanager\mediamanager\eingabe.c(1366): error C2466: Zuordnung eines Arrays der konstanten Größe 0 nicht möglich.
-     1>m:\mediamanager\mediamanager\eingabe.c(1366): error C2133: 'regisseur': Unbekannte Größe
-     1>m:\mediamanager\mediamanager\eingabe.c(1380): error C2065: 'MAX_regisseur_LENGTH': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1393): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1393): error C2223: Der linke Teil von '->regisseur' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1393): warning C4034: sizeof gibt 0 zurück
-     1>m:\mediamanager\mediamanager\eingabe.c(1393): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char []' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1393): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1393): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1395): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1395): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1409): error C2065: 'MAX_regisseur_LENGTH': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1421): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1421): error C2223: Der linke Teil von '->regisseur' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1421): warning C4034: sizeof gibt 0 zurück
-     1>m:\mediamanager\mediamanager\eingabe.c(1421): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char []' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1421): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1421): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1423): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1423): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1436): error C2065: 'MAX_regisseur_LENGTH': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1448): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1448): error C2223: Der linke Teil von '->regisseur' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1448): warning C4034: sizeof gibt 0 zurück
-     1>m:\mediamanager\mediamanager\eingabe.c(1448): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char []' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1448): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1448): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1450): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1450): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1487): error C2143: Syntaxfehler: Es fehlt ';' vor '}'
-     1>m:\mediamanager\mediamanager\eingabe.c(1488): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1488): error C2223: Der linke Teil von '->verlag' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1488): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'char *' und 'unsigned int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1488): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 1
-     1>m:\mediamanager\mediamanager\eingabe.c(1488): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char [51]' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1488): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1488): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1489): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1489): error C2223: Der linke Teil von '->verlag' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1490): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1490): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1516): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1516): error C2223: Der linke Teil von '->verlag' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1516): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'char *' und 'unsigned int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1516): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 1
-     1>m:\mediamanager\mediamanager\eingabe.c(1516): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char [51]' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1516): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1516): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1518): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1518): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1544): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1544): error C2223: Der linke Teil von '->verlag' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1544): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'char *' und 'unsigned int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1544): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 1
-     1>m:\mediamanager\mediamanager\eingabe.c(1544): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char [51]' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1544): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1544): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1546): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1546): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1568): warning C4013: 'gotxy' undefiniert; Annahme: extern mit Rückgabetyp int
-     1>m:\mediamanager\mediamanager\eingabe.c(1569): error C2146: Syntaxfehler: Fehlendes ';' vor Bezeichner 'gotoxy'
-     1>m:\mediamanager\mediamanager\eingabe.c(1589): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1589): error C2223: Der linke Teil von '->isbn' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1606): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1606): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1719): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1719): error C2223: Der linke Teil von '->erscheinungsdatum' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1722): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1722): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1802): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1802): error C2223: Der linke Teil von '->genre' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1816): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1816): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1851): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1851): error C2223: Der linke Teil von '->text' muss auf eine Struktur/Union zeigen
-     1>m:\mediamanager\mediamanager\eingabe.c(1851): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'char *' und 'unsigned int' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1851): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 1
-     1>m:\mediamanager\mediamanager\eingabe.c(1851): warning C4047: 'Funktion': Anzahl der Dereferenzierungen bei 'rsize_t' und 'char [1025]' unterschiedlich
-     1>m:\mediamanager\mediamanager\eingabe.c(1851): warning C4024: 'strcpy_s': Unterschiedliche Typen für formalen und übergebenen Parameter 2
-     1>m:\mediamanager\mediamanager\eingabe.c(1851): error C2198: "strcpy_s": Nicht genügend Argumente für Aufruf.
-     1>m:\mediamanager\mediamanager\eingabe.c(1852): error C2065: 'detail_search': nichtdeklarierter Bezeichner
-     1>m:\mediamanager\mediamanager\eingabe.c(1852): warning C4047: 'return': Anzahl der Dereferenzierungen bei 'Details *' und 'int' unterschiedlich
-         Block.c
-     1>m:\mediamanager\mediamanager\eingabe.h(32): warning C4031: Die zweite Liste formaler Parameter ist länger als die erste Liste
-     1>m:\mediamanager\mediamanager\eingabe.h(32): warning C4028: Formaler Parameter '2' unterscheidet sich von der Deklaration
-     1>m:\mediamanager\mediamanager\eingabe.h(32): error C2040: 'changeItem': 'Details *(Node *,char,char,char)' unterscheidet sich von 'Details *(Node *,char,char,char)' in Bezug auf die Anzahl vorgenommener Dereferenzierungen
-     1>m:\mediamanager\mediamanager\block.c(37): warning C4550: Ausdruck wird als Funktion ausgewertet, der eine Argumentliste fehlt
-     1>m:\mediamanager\mediamanager\block.c(112): warning C4550: Ausdruck wird als Funktion ausgewertet, der eine Argumentliste fehlt
-     1>m:\mediamanager\mediamanager\block.c(234): warning C4142: Neudefinition eines Typs ohne Auswirkungen
-     1>m:\mediamanager\mediamanager\block.c(234): warning C4027: Funktion ohne Liste formaler Parameter deklariert
-         Code wird generiert...
-     1>Die Erstellung des Projekts "M:\MediaManager\MediaManager\MediaManager.vcxproj" ist abgeschlossen, Build Ziel(e) -- FEHLER.
+         A:\Programme\VisualStudio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Menue.c
+         Menue.c
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\menue.c(67): warning C4033: 'Head' muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\menue.c(68): warning C4716: 'Head': Muss einen Wert zurückgeben
+       Link:
+         A:\Programme\VisualStudio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.lib" /MACHINE:X86 Debug\Ausgabe.obj
+         Debug\Block.obj
+         Debug\Eingabe.obj
+         Debug\FileEdit.obj
+         Debug\Liste.obj
+         Debug\main.obj
+         Debug\Menue.obj
+         Debug\Tools.obj
+         MediaManager.vcxproj -> C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe
+     1>Die Erstellung des Projekts "C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" ist abgeschlossen, Build Ziel(e).
 
-Fehler beim Buildvorgang.
+Build erfolgreich.
 
-Verstrichene Zeit 00:00:02.46
+Verstrichene Zeit 00:00:00.24

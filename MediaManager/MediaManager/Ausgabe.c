@@ -5,8 +5,8 @@
 char showList (Node * Knot , char prev)
 {
 	int i;
-	gotoxy(0,4);
 	clrRange(4,18);
+	gotoxy(0,4);
 	for (i = 0 ; i <=18; i ++)
 	{
 		if (Knot != NULL)
@@ -33,8 +33,8 @@ char showDetail (Details * Detail, char medium)
 	struct tm * nun;
 	nun = (struct tm *) calloc(1,sizeof(struct tm));
 
-	gotoxy(0,4);
 	clrRange(4,18);
+	gotoxy(0,4);
 
 	localtime_s(nun, &Detail->erscheinungsdatum);
 

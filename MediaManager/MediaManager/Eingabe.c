@@ -45,6 +45,34 @@
 //	return;
 //}
 
+int askIndex (void)
+{
+	int Index = 0;
+
+	//Menü löschen
+	if (clrRange(22, 3) == 0)
+	{
+		return 0;
+	}
+
+	//Footer anzeigen
+	Footer(2);
+
+	gotoxy(0,24);
+
+	printf("Bitte waehlen Sie ein Element aus (Index): ");
+
+	setColor(0,15);
+	scanf_s("%i", &Index); fflush(stdin);
+
+	if (Index == 'e')
+	{
+		exit;
+	}
+
+	return Index;
+}
+
 //Diese Funktion fragt alle Items für einen neuen Struct ab. Benötigt wird ein char, welches das Medium übergibt*/
 Details * addItemInput (char medium)
 {	
@@ -93,7 +121,7 @@ Details * addItemInput (char medium)
 
 	else if (titel[0] == '9' && titel[1] == '9'&& titel[2] == '\n')
 	{
-	exit (0);
+		exit (0);
 	}
 	//printf("%s", detail_new->titel);
 	clrPosition(22,0,0);
@@ -145,7 +173,7 @@ Details * addItemInput (char medium)
 			fflush(stdin);
 			if (regisseur[0] == '-' && regisseur[1] == '1'&& regisseur[2] == '\n')
 			{
-			return 0;
+				return 0;
 			}
 
 			else if (regisseur[0] == '9' && regisseur[1] == '9'&& regisseur[2] == '\n')
@@ -158,7 +186,7 @@ Details * addItemInput (char medium)
 		}
 	case '3':
 		{
-			
+
 			gotoxy(0,24);
 			setColor(sonderBackground,sonderFond);
 			printf("\t\t\t\t\t\t\t");
@@ -170,7 +198,7 @@ Details * addItemInput (char medium)
 			fgets (regisseur, (MAX_VERLAG_LENGTH), stdin);
 			regisseur[strlen(regisseur)-1] ='\0';
 			fflush(stdin);
-				clrPosition(23,0,80);
+			clrPosition(23,0,80);
 			if (regisseur[0] == '-' && regisseur[1] == '1'&& regisseur[2] == '\n')
 			{
 				return 0;
@@ -194,7 +222,7 @@ Details * addItemInput (char medium)
 		{
 			gotoxy(0,4);
 			printf("Bitte geben Sie einen Verlag ein (max 50 Zeichen): ");
-			
+
 			gotoxy(0,24);
 			setColor(sonderBackground,sonderFond);
 			printf("\t\t\t\t\t\t\t");
@@ -223,7 +251,7 @@ Details * addItemInput (char medium)
 		{
 			gotoxy(0,4);
 			printf("Bitte geben Sie ein Label ein (max 50 Zeichen): ");
-			
+
 			gotoxy(0,24);
 			setColor(sonderBackground,sonderFond);
 			printf("\t\t\t\t\t\t\t");
@@ -233,7 +261,7 @@ Details * addItemInput (char medium)
 			fgets (verlag, (MAX_VERLAG_LENGTH), stdin);
 			verlag[strlen(verlag)-1] ='\0';
 			fflush(stdin);
-				clrPosition(23,0,80);
+			clrPosition(23,0,80);
 			if (verlag[0] == '-' && verlag[1] == '1'&& verlag[2] == '\n')
 			{
 				return 0;
@@ -252,7 +280,7 @@ Details * addItemInput (char medium)
 			clrPosition(4,0,80);
 			gotoxy(0,4);
 			printf("Bitte geben Sie ein Studio ein (max 50 Zeichen): ");
-			
+
 			gotoxy(0,24);
 			setColor(sonderBackground,sonderFond);
 			printf("\t\t\t\t\t\t\t");
@@ -262,7 +290,7 @@ Details * addItemInput (char medium)
 			fgets (verlag, (MAX_VERLAG_LENGTH), stdin);
 			verlag[strlen(verlag)-1] ='\0';
 			fflush(stdin);
-				clrPosition(23,0,80);
+			clrPosition(23,0,80);
 			if (verlag[0] == '-' && verlag[1] == '1'&& verlag[2] == '\n')
 			{
 				return 0;
@@ -479,83 +507,86 @@ Details * addItemInput (char medium)
 			break;
 			//gotoxy(0,20);
 		}//clrPosition(22,0,80);
-			//enum genre_film(aktion = 1, drama = 2, komoedie = 3, krimi = 4, doku = 5, zeichentrick = 6, science-fiktion = 7, thriller = 8);
-		}
-		//enum genre_musik(rock = 1, pop = 2, klassik = 3, hip-hop = 4, techno = 5, dance = 6, metal = 7, house = 8);
+		//enum genre_film(aktion = 1, drama = 2, komoedie = 3, krimi = 4, doku = 5, zeichentrick = 6, science-fiktion = 7, thriller = 8);
+	}
+	//enum genre_musik(rock = 1, pop = 2, klassik = 3, hip-hop = 4, techno = 5, dance = 6, metal = 7, house = 8);
 
 
-		//enum genre_buch(sachbuch = 1, kinderbuch = 2, comic = 3, thriller = 4, horror = 5, maerchen = 6, biografie = 7, abenteuer = 8);
+	//enum genre_buch(sachbuch = 1, kinderbuch = 2, comic = 3, thriller = 4, horror = 5, maerchen = 6, biografie = 7, abenteuer = 8);
 
-				
 
-		for (i=0; ;i++){
-			gotoxy(0,0);
-			gotoxy(0,21);
-			genre_neu = getchar();
-			fflush(stdin);
-			clrPosition(21,0,80);
 
-			if(genre_neu == '9')
-			{
-				exit (0);
-			}
-			else if (genre_neu == '-')
-			{
-				return 0;
-			}
-			else if (genre_neu >= '1' && genre_neu <= '8')
-			{
-				detail_new->genre = genre_neu;
-				//printf("genre: %c", detail_new->genre);
-				break;
-			}
-			else 
-			{
-				clrPosition(21,0,80);
-				gotoxy(0,21);
-				setColor(fehlerBackground,fehlerFond);
-				printf("Nicht erlaubte Eingabe. Bitte nochmal eingeben: ");
-				setColor(standBackground,standFond);
-			}
-
-		}
-
-		gotoxy(0,24);
-		setColor(sonderBackground,sonderFond);
-		printf("\t\t\t\t\t\t\t");
-		Footer(1);
-		gotoxy(0,23);
-		clrPosition(21,0,80);
-		clrPosition(22,0,80);
-		clrPosition(23,0,80);
+	for (i=0; ;i++){
 		gotoxy(0,0);
-		gotoxy(0,4);
-		printf("Bitte geben Sie einen Text ein (max 1024 Zeichen): ");
-		gotoxy(0,6);
+		gotoxy(0,21);
+		genre_neu = getchar();
+		fflush(stdin);
+		clrPosition(21,0,80);
 
-
-		fgets (text, (MAX_TEXT_LENGTH), stdin);
-		text[strlen(text)-1] ='\0';
-		if (text[0] == '-' && text[1] == '1'&& text[2] == '\n')
-		{
-			return 0;
-		}
-
-		else if (text[0] == '9' && text[1] == '9'&& text[2] == '\n')
+		if(genre_neu == '9')
 		{
 			exit (0);
 		}
-		fflush(stdin);
-		strcpy_s(detail_new->text, sizeof(text) ,text);
+		else if (genre_neu == '-')
+		{
+			return 0;
+		}
+		else if (genre_neu >= '1' && genre_neu <= '8')
+		{
+			detail_new->genre = genre_neu;
+			//printf("genre: %c", detail_new->genre);
+			break;
+		}
+		else 
+		{
+			clrPosition(21,0,80);
+			gotoxy(0,21);
+			setColor(fehlerBackground,fehlerFond);
+			printf("Nicht erlaubte Eingabe. Bitte nochmal eingeben: ");
+			setColor(standBackground,standFond);
+		}
 
-	return detail_new;
 	}
 
+	gotoxy(0,24);
+	setColor(sonderBackground,sonderFond);
+	printf("\t\t\t\t\t\t\t");
+	Footer(1);
+	gotoxy(0,23);
+	clrPosition(21,0,80);
+	clrPosition(22,0,80);
+	clrPosition(23,0,80);
+	gotoxy(0,0);
+	gotoxy(0,4);
+	printf("Bitte geben Sie einen Text ein (max 1024 Zeichen): ");
+	gotoxy(0,6);
+
+
+	fgets (text, (MAX_TEXT_LENGTH), stdin);
+	text[strlen(text)-1] ='\0';
+	if (text[0] == '-' && text[1] == '1'&& text[2] == '\n')
+	{
+		return 0;
+	}
+
+	else if (text[0] == '9' && text[1] == '9'&& text[2] == '\n')
+	{
+		exit (0);
+	}
+	fflush(stdin);
+	strcpy_s(detail_new->text, sizeof(text) ,text);
+
+	return detail_new;
+	detail_new =NULL;
+	free(detail_new);
+	timeinfo = NULL;
+	free(timeinfo);
+}
 
 
 /*Diese Funktion sucht fragt die Sucheingabe des Users ab und speichert sie in den typdef struct Details.
-An die Funktion muss ein (int)-Parameter mit der Art des Mediums übergeben werden*/
-Node * addoneItemInput (Node * Knot, char ele, char medium, char index)
+An die Funktion muss ein (char)-Parameter mit der Art des Mediums übergeben werden*/
+Node * changeItemDetails (Node * Knot, char ele, char medium, int index)
 {	
 	time_t rawtime;
 	Details * detail_new;
@@ -571,23 +602,24 @@ Node * addoneItemInput (Node * Knot, char ele, char medium, char index)
 
 
 	while (Knot->prev != NULL);
-			{
-				Knot = Knot->prev;
-			}
+	{
+		Knot = Knot->prev;
+	}
 
-			for (i=0; ;i++)
-			{
-				if (Knot->nodeDetails->index == index)
-				{
+	for (i=0; ;i++)
+	{
+		if (Knot->nodeDetails->index == index)
+		{
 
-					break;
+			break;
 
-				}
-				else
-				{
-					Knot = Knot->next;
+		}
+		else
+		{
+			Knot = Knot->next;
 
-				}
+		}
+	}
 	switch (ele) 
 	{
 	case '1':
@@ -613,7 +645,7 @@ Node * addoneItemInput (Node * Knot, char ele, char medium, char index)
 
 			else if (titel[0] == '9' && titel[1] == '9'&& titel[2] == '\n')
 			{
-		exit (0);
+				exit (0);
 			}
 			//printf("%s", detail_new->titel);
 			return Knot;
@@ -634,7 +666,7 @@ Node * addoneItemInput (Node * Knot, char ele, char medium, char index)
 					setColor(sonderBackground,sonderFond);
 					printf("\t\t\t\t\t\t\t");
 					Footer(1);
-					gotoxy(0);
+					gotoxy(0,0);
 					gotoxy(0,23);
 					fgets (regisseur, (MAX_VERLAG_LENGTH), stdin);
 					regisseur[strlen(regisseur)-1] ='\0';
@@ -707,7 +739,7 @@ Node * addoneItemInput (Node * Knot, char ele, char medium, char index)
 					break;
 				}
 			}
-return Knot;
+			return Knot;
 			break;
 
 		}
@@ -722,7 +754,7 @@ return Knot;
 				{
 					gotoxy(0,4);
 					printf("Bitte geben Sie einen Verlag ein (max 50 Zeichen): ");
-					
+
 					fflush(stdin);
 					gotoxy(0,24);
 					setColor(sonderBackground,sonderFond);
@@ -878,7 +910,7 @@ return Knot;
 			gotoxy(0,23);
 
 			for (a=0; ;a++){
-				
+
 				scanf_s ("%i", &Jahr);
 				fflush(stdin);
 				clrPosition(23,0,80);
@@ -907,7 +939,8 @@ return Knot;
 			gotoxy(0,0);
 			gotoxy(0,23);
 
-			for (b=0; ;a++){
+			for (b=0; ;a++)
+			{
 				scanf_s ("%i", &Monat);
 				fflush(stdin);
 				clrPosition(23,0,80);
@@ -937,8 +970,9 @@ return Knot;
 			gotoxy(0,23);
 
 
-			for (c=0; ;c++){
-				
+			for (c=0; ;c++)
+			{
+
 				scanf_s ("%i", &Tag);
 				fflush(stdin);
 				clrPosition(23,0,80);
@@ -1006,7 +1040,7 @@ return Knot;
 					printf("1: Rock\t\t\t2: Pop\t\t\t3: Klassik\t\t\t4: Hip-Hop\t\t5: Techno\t\t6: Dance\t\t\t7: Metal\t\t8: House");
 					setColor(standBackground,standFond);
 					break;
-
+				}
 			case '3':
 				{
 					gotoxy(0,24);
@@ -1027,7 +1061,7 @@ return Knot;
 
 
 				//enum genre_buch(sachbuch = 1, kinderbuch = 2, comic = 3, thriller = 4, horror = 5, maerchen = 6, biografie = 7, abenteuer = 8);
-				}
+
 
 			}
 
@@ -1037,7 +1071,8 @@ return Knot;
 			gotoxy(0,21);
 
 
-			for (i=0; ;i++){
+			for (i=0; ;i++)
+			{
 				genre_neu = getchar();
 				fflush(stdin);
 				clrPosition(21,0,80);
@@ -1069,8 +1104,8 @@ return Knot;
 
 			return Knot;
 		}
-			break;
-		
+		break;
+
 
 	case '7':
 		{
@@ -1083,7 +1118,7 @@ return Knot;
 			gotoxy(0,23);
 			clrPosition(22,0,80);
 
-			
+
 			gotoxy(0,4);
 			printf("Bitte geben Sie einen Text ein (max 1024 Zeichen): ");
 			gotoxy(0,0);
@@ -1108,10 +1143,15 @@ return Knot;
 			return Knot;
 			break;
 		}
-			
-		}
+
+
+
 
 	}
+	Knot = NULL;
+	free (Knot);
+	timeinfo = NULL;
+	free (timeinfo);
 }
 
 
@@ -1125,7 +1165,7 @@ Node *  deleteItemInput (Node * Knot, char medium)
 
 	//char medium ='b';
 	int control;
-	int a, b, help = 0;
+	int a, b, c, help = 0;
 
 	/*switch (medium)
 	{	
@@ -1196,9 +1236,9 @@ Node *  deleteItemInput (Node * Knot, char medium)
 				return NULL;
 			}
 
-			else if (itemdelete == e)
+			else if (itemdelete == 'e')
 			{
-				exit 0;
+				exit (0);
 			}
 
 			while (Knot->prev != NULL);
@@ -1309,6 +1349,8 @@ Node *  deleteItemInput (Node * Knot, char medium)
 			break;
 		}
 	}
+	Knot = NULL;
+	free (Knot);
 }
 
 
@@ -1316,7 +1358,7 @@ Node *  deleteItemInput (Node * Knot, char medium)
 Details * searchItemInput (char medium, char ele)
 {
 	time_t rawtime;
-	Details * detail_new;
+	Details * detail_search;
 	struct tm * timeinfo;
 
 	//char ele = '6';
@@ -1363,7 +1405,7 @@ Details * searchItemInput (char medium, char ele)
 
 	case '2':
 		{
-			char regisseur[ MAX_regisseur_LENGTH];
+			char regisseur[ MAX_VERLAG_LENGTH];
 
 			switch (medium)//Bücher =1, CD=2, DVD=3
 			{
@@ -1377,7 +1419,7 @@ Details * searchItemInput (char medium, char ele)
 					Footer(1);
 					gotoxy(0,0);
 					gotoxy(0,23);
-					fgets (regisseur, (MAX_regisseur_LENGTH), stdin);
+					fgets (regisseur, (MAX_VERLAG_LENGTH), stdin);
 					fflush(stdin);
 					regisseur[strlen(regisseur)-1] ='\0';
 					if (regisseur[0] == '-' && regisseur[1] == '1'&& regisseur[2] == '\n')
@@ -1392,7 +1434,7 @@ Details * searchItemInput (char medium, char ele)
 
 					strcpy_s(detail_search->regisseur, sizeof(regisseur) ,regisseur);
 					//printf("%s", detail_search->regisseur);
-						return detail_search;
+					return detail_search;
 					break;
 				}
 
@@ -1406,7 +1448,7 @@ Details * searchItemInput (char medium, char ele)
 					Footer(1);
 					gotoxy(0,0);
 					gotoxy(0,23);
-					fgets (regisseur, (MAX_regisseur_LENGTH), stdin);
+					fgets (regisseur, (MAX_VERLAG_LENGTH), stdin);
 					fflush(stdin);
 					regisseur[strlen(regisseur)-1] ='\0';
 					if (regisseur[0] == '-' && regisseur[1] == '1'&& regisseur[2] == '\n')
@@ -1420,7 +1462,7 @@ Details * searchItemInput (char medium, char ele)
 					}
 					strcpy_s(detail_search->regisseur, sizeof(regisseur) ,regisseur);
 					//printf("%s", detail_search->regisseur);
-						return detail_search;
+					return detail_search;
 					break;
 				}
 			case '3':
@@ -1433,7 +1475,7 @@ Details * searchItemInput (char medium, char ele)
 					Footer(1);
 					gotoxy(0,0);
 					gotoxy(0,23);
-					fgets (regisseur, (MAX_regisseur_LENGTH), stdin);
+					fgets (regisseur, (MAX_VERLAG_LENGTH), stdin);
 					fflush(stdin);
 					regisseur[strlen(regisseur)-1] ='\0';
 					if (regisseur[0] == '-' && regisseur[1] == '1'&& regisseur[2] == '\n')
@@ -1447,7 +1489,7 @@ Details * searchItemInput (char medium, char ele)
 					}
 					strcpy_s(detail_search->regisseur, sizeof(regisseur) ,regisseur);
 					//printf("%s", detail_search->regisseur);
-						return detail_search;
+					return detail_search;
 					break;
 				}
 			}
@@ -1466,7 +1508,7 @@ Details * searchItemInput (char medium, char ele)
 				{
 					gotoxy(0,4);
 					printf("Bitte geben Sie einen Verlag ein (max 50 Zeichen): ");
-					
+
 					gotoxy(0,24);
 					setColor(sonderBackground,sonderFond);
 					printf("\t\t\t\t\t\t\t");
@@ -1483,11 +1525,11 @@ Details * searchItemInput (char medium, char ele)
 
 					else if (verlag[0] == '9' && verlag[1] == '9'&& verlag[2] == '\n')
 					{
-						exit (0)
+						exit (0);
 					}
 					strcpy_s(detail_search->verlag, sizeof(verlag) ,verlag);
 					printf("%s", detail_search->verlag);
-						return detail_search;
+					return detail_search;
 					break;
 				}
 
@@ -1495,7 +1537,7 @@ Details * searchItemInput (char medium, char ele)
 				{
 					gotoxy(0,4);
 					printf("Bitte geben Sie ein Label ein (max 50 Zeichen): ");
-					
+
 					gotoxy(0,24);
 					setColor(sonderBackground,sonderFond);
 					printf("\t\t\t\t\t\t\t");
@@ -1515,14 +1557,14 @@ Details * searchItemInput (char medium, char ele)
 					}
 					strcpy_s(detail_search->verlag, sizeof(verlag) ,verlag);
 					//printf("%s", detail_search->verlag);
-						return detail_search;
+					return detail_search;
 					break;
 				}
 			case '3':
 				{
 					gotoxy(0,4);
 					printf("Bitte geben Sie ein Studio ein (max 50 Zeichen): ");
-					
+
 					gotoxy(0,24);
 					setColor(sonderBackground,sonderFond);
 					printf("\t\t\t\t\t\t\t");
@@ -1543,7 +1585,7 @@ Details * searchItemInput (char medium, char ele)
 					}
 					strcpy_s(detail_search->verlag, sizeof(verlag) ,verlag);
 					//printf("%s", detail_search->verlag);
-						return detail_search;
+					return detail_search;
 					break;
 				}
 			}
@@ -1565,7 +1607,7 @@ Details * searchItemInput (char medium, char ele)
 			setColor(sonderBackground,sonderFond);
 			printf("\t\t\t\t\t\t\t");
 			Footer(1);
-			gotxy(0,0)
+			gotoxy(0,0);			
 			gotoxy(0,23);
 			clrPosition(22,0,80);
 
@@ -1603,7 +1645,7 @@ Details * searchItemInput (char medium, char ele)
 				}
 			}
 
-				return detail_search;
+			return detail_search;
 			break;
 		}
 
@@ -1719,7 +1761,7 @@ Details * searchItemInput (char medium, char ele)
 			detail_search->erscheinungsdatum = mktime ( timeinfo );
 
 			//printf("eingelesene Zeit: %i", ctime_s(detail_search->erscheinungsdatum, sizeof));
-				return detail_search;
+			return detail_search;
 			break;
 		}
 
@@ -1813,7 +1855,7 @@ Details * searchItemInput (char medium, char ele)
 				}
 
 			}
-				return detail_search;
+			return detail_search;
 			break;
 		}
 
@@ -1854,4 +1896,8 @@ Details * searchItemInput (char medium, char ele)
 		}
 
 	}
+	detail_search = NULL;
+	free (detail_search);
+	timeinfo = NULL;
+	free (timeinfo);
 }

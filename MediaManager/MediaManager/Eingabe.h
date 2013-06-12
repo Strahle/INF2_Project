@@ -9,10 +9,7 @@
 				- deleteItemInput hinzugefügt
 				- searchItemInput hinzugefügt
 				- in Liste.h wurde dem struct Betails ein neuer char regisseur, der den Regisseur, den Interpreten oder den Autor enthält
- - ToDo: 
-				-addouneItemInput zu changeItem ändern
-				-Details * changeItem (Node * Knot, char, char, char)
-				-Listenknoten, Index, Suchparameter, Medium
+ - ToDo: - e: exit, 0 abbrechen 
  ----------------------------------------------------------------------------
 */			
 #include <stdio.h>
@@ -29,7 +26,8 @@
 
 //Die Funktion changeItem bekommt als Übergabewerte einen pointer auf Node, sowie einen char mit dem Index, einen char mit einem Suchparameter (1-7) und einen char mit dem Medium (1-3)
 //Die Funktion ändert einen Wert in dem ihr vorgegebenen Knot 
-	Details * changeItem (Node *, char, char , char );
+//Konten der Liste, Suchparameter, Media, Index
+	Node * changeItemDetails (Node *, char, char , int);
 
 //Die Funktion addItemInpt erstellt einen neuen struct Detais, sie benötigt als Übergabeparameter einen char mit dem Medium (1-3)
 	Details *  addItemInput (char);
@@ -44,7 +42,11 @@
 
 	//Übergabe Medium (char (b=Buch, c=cd, d=dvd) und Suchparameter (1-7)
 	//Frägt den/die Suchparameter ab
-	Details *  searchItemInput (char);
+	Details *  searchItemInput (char, char);
 
-
+	//Frägt ab welcher Index ausgewählt werden soll und gibt diesen zurück
+	//Rückgabe: Index
+	//Bei Fehler oder keinem Ergenis: 0
+	int askIndex (void);
+	
 #endif

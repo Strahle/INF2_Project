@@ -76,7 +76,7 @@ char MediaMenue (void)
 	Head(0);
 
 	setColor(standBackground,standFond);
-	clrPosition(1,35,45);
+	clrRange(3,30);
 	gotoxy(35,1);
 	printf("Medien Auswahl");
 

@@ -48,6 +48,12 @@
 
 	//Inits list with null
 	Node * initList ();
+
+	//Sucht in der Liste nach einem Element mit dem entsprechenden Index
+	//Übergabe: Knoten der Liste, suchender Index
+	//Rückgabe: Gesuchter Knoten
+	//Bei Fehler oder keinem Ergenis: NULL
+	Node * searchForIndex (Node * Knot, int Index);
 	
 	//Returns ankerAnfang
 	Node * getAnkerAnfang(Node * myNode);
