@@ -107,7 +107,7 @@ char MediaMenue (void)
 //7: Genre Auswahl
 char ListMenue (char Medium)
 {
-	clrPosition(1,35,45);
+	clrPosition(1,35,15);
 	gotoxy(35,1);
 	printf("Listenanzeige");
 
@@ -152,7 +152,7 @@ char ListMenue (char Medium)
 char showDetailMenue (void)
 {
 
-	clrPosition(1,35,45);
+	clrPosition(1,35,15);
 	gotoxy(35,1);
 	printf("Detail Men\x81");
 
@@ -183,10 +183,10 @@ char showDetailMenue (void)
 //14: ISBN aufwärts
 //15: Erscheinungsdatum aufwärts
 //16: Schauspieler aufwärts
-int SortMenue (void)
+int SortMenue (char medium)
 {
 
-	clrPosition(1,35,45);
+	clrPosition(1,35,15);
 	gotoxy(35,1);
 	printf("Sortier Men\x81");
 
@@ -195,21 +195,45 @@ int SortMenue (void)
 	printf("abw\x84""rts Sortieren\t\t\t\t\t\t\t\t");
 	setColor(menueBackground,menueFond);
 	printf("1: Titel\t\t");
-	printf("2: Autor\t");
-	printf("3: Verlag/Studio/Label\t");
-	printf("4: ISBN\t\t");
-	printf("5: Erscheinungsdatum\t");
-	printf("6: Schauspieler\t\t\t\t\t\t");
+	switch (medium)
+	{
+		case 1 :
+			printf("2: Autor\t\t");
+			printf("3: Verlag\t\t");
+			break;
+		case 2 :
+			printf("2: Interpret\t\t");
+			printf("3: Label\t\t");
+			break;
+		case 3 :
+			printf("2: Regisseur\t\t");
+			printf("3: Studio\t\t");
+			break;
+	}
+	printf("4: ISBN\t");
+	printf("5: Erscheinungsdatum\t\t\t\t\t\t\t\t");
 
 	setColor(sonderBackground,sonderFond);
 	printf("aufw\x84""rts Sortieren\t\t\t\t\t\t\t\t");
 	setColor(menueBackground,menueFond);	setColor(7,1);
 	printf("11: Titel\t\t");
-	printf("12: Autor\t");
-	printf("13: Verlag/Studio/Label\t");
-	printf("14: ISBN\t");
-	printf("15: Erscheinungsdatum\t");
-	printf("16: Schauspieler\t\t\t");
+	switch (medium)
+	{
+		case 1 :
+			printf("12: Autor\t\t");
+			printf("13: Verlag\t\t");
+			break;
+		case 2 :
+			printf("12: Interpret\t\t");
+			printf("13: Label\t\t");
+			break;
+		case 3 :
+			printf("12: Regisseur\t\t");
+			printf("13: Studio\t\t");
+			break;
+	}
+	printf("14: ISBN");
+	printf("15: Erscheinungsdatum\t\t\t\t");
 
 	Footer(4);
 
@@ -228,7 +252,7 @@ int SortMenue (void)
 char ChangeMenue (void)
 {
 
-	clrPosition(1,35,45);
+	clrPosition(1,35,15);
 	gotoxy(35,1);
 	printf("Eintrag \x8E""ndern");
 
@@ -258,7 +282,7 @@ char ChangeMenue (void)
 char SearchMenue (void)
 {
 
-	clrPosition(1,35,45);
+	clrPosition(1,35,15);
 	gotoxy(35,1);
 	printf("Suchen");
 
@@ -283,7 +307,7 @@ char SearchMenue (void)
 char SearchMenueResult (void)
 {
 
-	clrPosition(1,35,45);
+	clrPosition(1,35,15);
 	gotoxy(35,1);
 	printf("Ergebnis");
 

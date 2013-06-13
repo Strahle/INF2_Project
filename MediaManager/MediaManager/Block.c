@@ -77,6 +77,8 @@ char Liste (void)
 
 	//Liste aufrufen
 	showList(List);
+
+	return -1;
 }
 
 char details (void)
@@ -95,35 +97,35 @@ char details (void)
 
 char selectElement (void)
 {
-	//Index abfragen und in der Liste nach dem Datensatz suchen
-	List = searchForIndex (List, askIndex());
-}
+	Node * Datensatz = NULL; //Pointer auf das ausgewählte Element
 
-int askInput (void)
-{
-	int Data = 0;
-	char Input = 0;
-	setColor(0,14);
-	fflush(stdin);
+	//Menü löschen
+	if (clrRange(22, 3) == 0)
+	{
+		return 0;
+	}
+
 	while (1)
 	{
-		scanf_s("%c", &Input);
-		switch (Input)
+		//Index abfragen und in der Liste nach dem Datensatz suchen
+		Datensatz = searchForIndex (List, askIndex());
+		if (Datensatz != NULL)
 		{
-		case 'e': return -1;
-		case 'v': return -2;
-		case 'z': return -3;
-		case '\n': return Data;
+			break;
 		}
-		Data = Data * 10 + Input - 48;
+		gotoxy(0,23);
+		printf_s("Der von Ihnen gew\204""hlte Index ist nicht g\x81""ltig");
 	}
-	return 0;
+
+	List = Datensatz;
+
+	return -1;
 }
 
 char search (void)
 {
-	int searchParameter;
-	char titel[50];
+	char titel[50]; //Zwischenspeicher für den Suchwert
+	int i; //Zählvariable
 
 	setColor(0,15);
 
@@ -147,6 +149,16 @@ char search (void)
 	case '0': return -1;
 	}
 
+	//"\n" entfernen
+	for (i = 0; i < 50; i ++)
+	{
+		if (titel[i] == '\n')
+		{
+			titel[i] = '\0';
+			break;
+		}
+	}
+
 	//Sucht in der Liste nach dem Titel und übergibt eine neue Liste mit den Ergebnissen
 	List = searchItem(List,titel);
 
@@ -157,7 +169,7 @@ char search (void)
 char add (void)
 {
 	Details * Detail; //Pointer zur übergabe der Details
-
+	
 	//Bildschirm löschen
 	clrscreen();
 
@@ -178,6 +190,8 @@ char add (void)
 	{
 		return 0;
 	}
+
+	return -1;
 }
 
 char edit (void)
@@ -208,6 +222,8 @@ char edit (void)
 	{
 		return 0;
 	}
+
+	return -1;
 }
 
 char del (void)
@@ -237,6 +253,8 @@ char del (void)
 	{
 		return 0;
 	}
+
+	return -1;
 }
 
 char sort (void)
@@ -247,39 +265,40 @@ char sort (void)
 	clrscreen();
 
 	//Optionen nach denen sortiert werden kann anzeigen
-	SortMenue();
+	SortMenue(cMedia);
 
 	gotoxy(0,18);
 	switch (askInput())
 	{
 	case 0: return -1;
 	case -1: exit(0);
-	case 1:
+	case 1: bubbleSortList(sortTitelDesc);
 		break;
-	case 2:
+	case 2: //bubbleSortList(sortAutorDesc);
 		break;
-	case 3:
+	case 3: bubbleSortList(sortVerlagDesc);
 		break;
-	case 4:
+	case 4: bubbleSortList(sortIsbnDesc);
 		break;
-	case 5:
+	case 5: bubbleSortList(sortErscheinungsdatumDesc);
 		break;
-	case 6:
+	case 6: //bubbleSortList(sortTextDesc);
 		break;
-	case 11:
+	case 11: bubbleSortList(sortTitelAsc);
 		break;
-	case 12:
+	case 12: //bubbleSortList(sortAutorAsc);
 		break;
-	case 13:
+	case 13: bubbleSortList(sortVerlagAsc);
 		break;
-	case 14:
+	case 14: bubbleSortList(sortIsbnAsc);
 		break;
-	case 15:
+	case 15: bubbleSortList(sortErscheinungsdatumAsc);
 		break;
-	case 16:
+	case 16: //bubbleSortList(sortTextAsc);
 		break;
 	}
 
+	return -1;
 }
 
 //Gibt bei Fehler 0 zurück

@@ -48,5 +48,12 @@
 	//Rückgabe: Index
 	//Bei Fehler oder keinem Ergenis: 0
 	int askIndex (void);
+
+	//Frägt einzelne Char Zeichen ab und gibt eine Integer Zahl zurück
+	//Rückgabe: Eingabe(Zahlen)
+	//e: -1
+	//v: -2
+	//z: -3
+	int askInput (void);
 	
 #endif

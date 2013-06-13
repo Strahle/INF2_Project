@@ -33,6 +33,7 @@ void main(void)
 		{
 			//Liste anzeigen
 			Liste();
+
 			//Auswahl auswerten
 			evaluateListe();
 
@@ -102,7 +103,7 @@ void evaluateListe (void)
 		case 4: selectElement();
 				if (edit() == 0)
 				{
-					printError ("Es ist ein Fehler beim aendern des Elements aufgetreten");
+					printError ("Es ist ein Fehler beim \204""ndern des Elements aufgetreten");
 				}
 				break;
 		case 5: if (del() == 0)

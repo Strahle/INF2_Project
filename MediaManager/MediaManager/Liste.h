@@ -26,7 +26,7 @@
 	//Node Struct for List
 	typedef
 		struct strNode {
-			int pos;
+			//int pos;
 			struct strNode * next;
 			struct strNode * prev;
 			struct strDetails * nodeDetails;
@@ -57,6 +57,7 @@
 	
 	//Returns ankerAnfang
 	Node * getAnkerAnfang(Node * myNode);
+
 	//Return ankerEnde
 	Node * getAnkerEnde(Node * myNode);
 
@@ -84,6 +85,7 @@
 	void bubbleSortList(int (*compareFunction) (Details *,Details *));
 
 	//CompareFunctions for BubbleSortList
+
 	//Sortieren nach Index aufsteigend
 	int sortIndexAsc (Details * a, Details * b);
 	//Sortieren nach Index absteigend

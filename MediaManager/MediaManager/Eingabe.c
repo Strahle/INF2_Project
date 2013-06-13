@@ -2,32 +2,60 @@
 
 int askIndex (void)
 {
-	int Index = 0;
+	int Index = 0; //Zwischenspeicher für den eingegebenen Index
 
+	//Schriftfarbe einstellen
 	setColor(0,15);
 
-	//Menü löschen
-	if (clrRange(22, 3) == 0)
-	{
-		return 0;
-	}
+	//Alte Einträge löschen
+	clrRange(24,1);
 
 	//Footer anzeigen
 	Footer(2);
 
+	//Anweisungen ausgeben
 	gotoxy(0,24);
+	printf("Bitte w\204""hlen Sie ein Element aus (Index): ");
 
-	printf("Bitte waehlen Sie ein Element aus (Index): ");
-
+	//Index abfragen
 	setColor(0,14);
-	scanf_s("%i", &Index); fflush(stdin);
+	Index = askInput();
 
-	if (Index == 'e')
+	//Exit bei 'e'
+	if (Index == -1)
 	{
-		exit;
+		exit(0);
 	}
 
 	return Index;
+}
+
+int askInput (void)
+{
+	int Data = 0; //Zwischenspeicher für die Eingabe
+	char Input = 0; //Temporärer Speicher für die Eingabe
+
+	//Farbe für die Eingabe setzen
+	setColor(0,14);
+
+	//Tastatur Zwischenspeicher leeren
+	fflush(stdin);
+
+	//Einlesen einzelner Zeichen
+	while (1)
+	{
+		scanf_s("%c", &Input);
+		switch (Input)
+		{
+		case 'e': return -1;
+		case 'v': return -2;
+		case 'z': return -3;
+		case '\n': return Data;
+		}
+		Data = Data * 10 + Input - 48;
+	}
+
+	return 0;
 }
 
 

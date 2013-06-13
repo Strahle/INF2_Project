@@ -116,7 +116,7 @@
 	//16: Schauspieler aufwärts
 	//
 	//e: exit
-	int SortMenue (void);
+	int SortMenue (char );
 
 	//Menü für die Optionen zum ändern
 	//0: Zurück zur Liste

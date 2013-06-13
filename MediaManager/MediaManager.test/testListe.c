@@ -162,10 +162,10 @@ void testIntSortList(void)
 {
 	Node * ankerAnfang;
 	
-	ankerAnfang = initListeWithNelements(10,1); //ini liste with 4 elements
-	debugOutput(ankerAnfang);
+	ankerAnfang = initListeWithNelements(30000,1); //ini liste with 4 elements
+	//debugOutput(ankerAnfang);
 	bubbleSortList(sortTitelAsc);
-	debugOutput(ankerAnfang);
+	//debugOutput(ankerAnfang);
 	getchar();
 }
 void testCharSortList(void)

@@ -83,7 +83,7 @@ Node * addItem (Details * strDetails)
 		return NULL;
 	}
 
-	myNode = (Node*) malloc(sizeof(Node)); //SPeicher für node holen
+	myNode = (Node*) calloc(1,sizeof(Node)); //SPeicher für node holen
 	myDetails = (Details*) calloc(1,sizeof(Details)); //speicher für details holen
 	*myDetails = *strDetails;
 
@@ -124,7 +124,7 @@ Node * addItemSearchList(Details * strDetails, Node * nodeFromCurrentList)
 		return NULL;
 	}
 
-	myNode = (Node*) malloc(sizeof(Node)); //SPeicher für node holen
+	myNode = (Node*) calloc(1,sizeof(Node)); //SPeicher für node holen
 	myDetails = (Details*) calloc(1,sizeof(Details)); //speicher für details holen
 	*myDetails = *strDetails;
 
@@ -165,7 +165,7 @@ Node * searchItem (Node * nNode, char * searchStr)
 		myNode = myNode->next;
 	}
 
-	return searchAnkerEnde;
+	return getAnkerAnfang(searchAnkerEnde);
 }
 
 //	Löscht das gegebene Element aus der Liste
