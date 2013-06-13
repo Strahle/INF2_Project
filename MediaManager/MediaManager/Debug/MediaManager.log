@@ -1,10 +1,21 @@
-﻿Der Buildvorgang wurde am 12.06.2013 23:27:31 gestartet.
+﻿Der Buildvorgang wurde am 13.06.2013 16:47:26 gestartet.
      1>Projekt "C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\MediaManager\MediaManager.vcxproj" auf Knoten "2", Build Ziel(e).
      1>ClCompile:
-         A:\Programme\VisualStudio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Menue.c
-         Menue.c
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\menue.c(67): warning C4033: 'Head' muss einen Wert zurückgeben
-     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\menue.c(68): warning C4716: 'Head': Muss einen Wert zurückgeben
+         A:\Programme\VisualStudio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Block.c main.c
+         main.c
+         Block.c
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(125): warning C4101: 'searchParameter': Unreferenzierte lokale Variable
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(244): warning C4101: 'sortParameter': Unreferenzierte lokale Variable
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(327): warning C4142: Neudefinition eines Typs ohne Auswirkungen
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(327): warning C4027: Funktion ohne Liste formaler Parameter deklariert
+         Code wird generiert...
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(80): warning C4715: "Liste": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(24): warning C4715: "Media": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(100): warning C4716: 'selectElement': Muss einen Wert zurückgeben
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(181): warning C4715: "add": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(211): warning C4715: "edit": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(240): warning C4715: "del": Nicht alle Steuerelementpfade geben einen Wert zurück.
+     1>c:\users\samu\source\repos\inf2_project\mediamanager\mediamanager\block.c(283): warning C4715: "sort": Nicht alle Steuerelementpfade geben einen Wert zurück.
        Link:
          A:\Programme\VisualStudio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samu\Source\Repos\INF2_Project\MediaManager\Debug\MediaManager.lib" /MACHINE:X86 Debug\Ausgabe.obj
          Debug\Block.obj
@@ -19,4 +30,4 @@
 
 Build erfolgreich.
 
-Verstrichene Zeit 00:00:00.24
+Verstrichene Zeit 00:00:00.73

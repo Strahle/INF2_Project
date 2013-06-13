@@ -35,7 +35,11 @@ char add (void);
 //Sucht nach einem Parameter
 char search (void);
 
-//Frägt die Menüeingabe ab
+//Frägt einzelne Char Zeichen ab und gibt eine Integer Zahl zurück
+//Rückgabe: Eingabe(Zahlen)
+//e: -1
+//v: -2
+//z: -3
 int askInput (void);
 
 //Anzeige der Details + Menü

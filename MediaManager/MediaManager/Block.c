@@ -7,11 +7,10 @@ Node * List; //Knoten für die aktuelle Position der Liste (Erstes Element auf de
 
 void init (void)
 {
-	initList(); //Darf keinen Rückgabewert mehr haben
-	initFileEdit();
+	List = initList(); //Initialisiert eine neue Liste
+	initFileEdit(); //Reinitialisiert FileEdit
 }
 
-//Gibt bei Fehler 0 zurück
 char Media (void)
 {
 	//Bildschirm löschen
@@ -24,29 +23,56 @@ char Media (void)
 	}
 }
 
-//Gibt bei Fehler 0 zurück
 char Liste (void)
 {
+	//Pointer für die Abfrage Vor/Zurück
+	Node * Listvor;
+	//Zähervariable
+	char i;
+
 	//Bildschirm löschen
 	clrscreen();
 
 	//Listen Menü aufrufen
-	if (ListMenue() == 0)
+	if (ListMenue(cMedia) == 0)
 	{
 		return 0;
 	}
-	
-	if (List -> next && List -> prev != NULL)
+
+	//Abfrage ob Vor, Zurück oder beides angezeigt werden muss
+	if (List != NULL)
 	{
-		Footer(0);
+		Listvor = List;
+		for (i = 0; i < 17; i++)
+		{
+			if (Listvor -> next == NULL)
+			{
+				break;
+			}
+			Listvor = Listvor -> next;
+		}
+
+
+		if (Listvor -> next != NULL && List -> prev != NULL)
+		{
+			Footer(0);
+		}
+		else if (Listvor -> next != NULL)
+		{
+			Footer(3);
+		}
+		else if (List -> prev != NULL)
+		{
+			Footer(1);
+		}
+		else
+		{
+			Footer(2);
+		}
 	}
-	else if (List -> next != NULL)
+	else
 	{
-		Footer(3);
-	}
-	else if (List -> prev != NULL)
-	{
-		Footer(1);
+		Footer(2);
 	}
 
 	//Liste aufrufen
@@ -75,15 +101,56 @@ char selectElement (void)
 
 int askInput (void)
 {
-	int Input = 0;
-	setColor(0,15);
-	scanf_s("%i", &Input); fflush(stdin);
-	return Input;
+	int Data = 0;
+	char Input = 0;
+	setColor(0,14);
+	fflush(stdin);
+	while (1)
+	{
+		scanf_s("%c", &Input);
+		switch (Input)
+		{
+		case 'e': return -1;
+		case 'v': return -2;
+		case 'z': return -3;
+		case '\n': return Data;
+		}
+		Data = Data * 10 + Input - 48;
+	}
+	return 0;
 }
 
 char search (void)
 {
+	int searchParameter;
+	char titel[50];
 
+	setColor(0,15);
+
+	//Menü löschen
+	if (clrRange(22, 3) == 0)
+	{
+		return 0;
+	}
+
+	//Footer anzeigen
+	Footer(4);
+
+	gotoxy(0,23);
+	printf("Bitte geben Sie einen Titel ein (max 50 Zeichen): ");
+	fgets(titel, (TITLE_LENGTH), stdin);
+
+	//Abbruchbedingungen anzeigen
+	switch (titel[0])
+	{
+	case 'e': exit(0);
+	case '0': return -1;
+	}
+
+	//Sucht in der Liste nach dem Titel und übergibt eine neue Liste mit den Ergebnissen
+	List = searchItem(List,titel);
+
+	return -1;
 }
 
 //Gibt bei Fehler 0 zurück
@@ -115,11 +182,7 @@ char add (void)
 
 char edit (void)
 {
-	int Index; //Speichervariable für den Index
 	char changeselect; //Speichervariable für den Parameter welche Eigenschaft geändert werden soll
-
-	//Index für das zu ändernde Element abfragen
-	Index = askIndex();
 
 	//Bildschirm löschen
 	clrscreen();
@@ -131,13 +194,14 @@ char edit (void)
 	gotoxy(0,21);
 
 	//Parameter abfragen der geändert werden soll
-	if ((changeselect = askInput()) == 'e')
+	switch (changeselect = askInput())
 	{
-		exit;
+	case -1: exit(0);
+	case 0: return -1;
 	}
-	
+
 	//Element ändern
-	List = changeItemDetails(List,cMedia,changeselect,Index);
+	List = changeItemDetails(List, cMedia,changeselect, List -> nodeDetails -> index);
 
 	//Speichert die aktuallisierte Liste in der Datei
 	if (savelist() == 0)
@@ -148,21 +212,21 @@ char edit (void)
 
 char del (void)
 {
-	Node * Datensatz;
+	Node * Datensatz; //Pointer auf den Datensatz der  gelöscht werden soll
+
+	//Index abfragen und Datensatz suchen
+	Datensatz = searchForIndex(List, askIndex());
 
 	//Bildschirm löschen
 	clrscreen();
 
-	//Abfrage der Parameter
-	if ((Datensatz = deleteItemInput(List,cMedia)) == NULL)
-	{
-		return 0;
-	}
-
 	//Knoten auf das nächste oder vorige Element setzen
-	if ((List = Datensatz -> next) == NULL)
+	if (Datensatz != NULL)
 	{
-		List = Datensatz -> prev;
+		if ((List = Datensatz -> next) == NULL)
+		{
+			List = Datensatz -> prev;
+		}
 	}
 
 	//Datensetz aus Liste löschen
@@ -177,6 +241,44 @@ char del (void)
 
 char sort (void)
 {
+	int sortParameter;
+
+	//Bildschirm löschen
+	clrscreen();
+
+	//Optionen nach denen sortiert werden kann anzeigen
+	SortMenue();
+
+	gotoxy(0,18);
+	switch (askInput())
+	{
+	case 0: return -1;
+	case -1: exit(0);
+	case 1:
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	case 11:
+		break;
+	case 12:
+		break;
+	case 13:
+		break;
+	case 14:
+		break;
+	case 15:
+		break;
+	case 16:
+		break;
+	}
 
 }
 
@@ -223,6 +325,7 @@ char loadlist (void)
 
 char clrscreen(char Line, char space)
 {
+	setColor(0,15);
 	clrRange(3,30);
 	gotoxy(0,0);
 	return -1;
@@ -230,35 +333,50 @@ char clrscreen(char Line, char space)
 
 void vorBlaettern (void)
 {
-	char i;
-	for (i = 0; i < 10; i++)
+	if (List != NULL)
 	{
-		if (List -> next == NULL)
+		char i;
+		for (i = 0; i < 17; i++)
 		{
-			zurueckBlaettern();
-			return;
+			if (List -> next == NULL)
+			{
+				zurueckBlaettern();
+				return;
+			}
+			List = List -> next;
 		}
-		List = List -> next;
 	}
 }
 
 void zurueckBlaettern (void)
 {
-	char i;
-	for (i = 0; i < 10; i++)
+	if (List != NULL)
 	{
-		if (List -> prev == NULL)
+		char i;
+		for (i = 0; i < 17; i++)
 		{
-			return;
+			if (List -> prev == NULL)
+			{
+				return;
+			}
+			List = List -> prev;
 		}
-		List = List -> prev;
 	}
 }
 
 void printError (char * Error)
 {
 	setColor(1,12);
-	gotoxy (10,10);
+	gotoxy (10,63);
+	gotoxy (10,50);
 	printf ("%s", Error);
-	gotoxy (10,11);
+	gotoxy (26,51);
+	printf("f: Fortfahren		e: Exit");
+	gotoxy (39,52);
+	if (askInput() == 'e')
+	{
+		exit(0);
+	}
+	clrRange(50,3);
+	gotoxy (0,0);
 }

@@ -5,9 +5,10 @@
 char showList (Node * Knot , char prev)
 {
 	int i;
+	setColor(0,15);
 	clrRange(4,18);
 	gotoxy(0,4);
-	for (i = 0 ; i <=18; i ++)
+	for (i = 0 ; i <=17; i ++)
 	{
 		if (Knot != NULL)
 		{

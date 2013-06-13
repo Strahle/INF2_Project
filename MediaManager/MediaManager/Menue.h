@@ -70,54 +70,56 @@
 	#define fehlerFond (12) 
 	#define sonderFond (9) 
 
-	char MediaMenue (void);
 	//Menü für die Auswahl des Genre
 	//1: Bücher
 	//2: CD's
 	//3: DVD's
-
-	char ListMenue (void );
+	//e: Exit
+	char MediaMenue (void);
+	
 	//Menü für die Optionen der Listenanzeige
+	//0: Zurück zur Medienauswahl
 	//1: Suchen
 	//2: Details
 	//3: Hinzufügen
 	//4: Ändern
 	//5: Löschen
 	//6: Sortieren
-	//7: Media Auswahl
-	//88: vor
-	//99: zurück
+	//v: vor
+	//z: zurück
 	//e: exit
+	char ListMenue (char Medium);
 
-	char showDetailMenue (void );
 	//Menü für die Optionen der Detailanzeige
+	//0: Zurück zur Liste
 	//1: Auswahl
 	//2: Ändern
 	//3: Löschen
-	//99: Zurück zur Liste
 	//e: exit
+	char showDetailMenue (void );
 
-	int SortMenue (void);
 	//Menü für die Optionen der Sortierfunktion // Ich muss als Bücherliste aussehen
+	//0: Zurück zur Liste
+	//
 	//1: Titel abwärts
 	//2: Autor abwärts
 	//3: Verlag/Studio/Label abwärts
 	//4: ISBN abwärts
 	//5: Erscheinungsdatum abwärts
 	//6: Schauspieler abwärts
-
-	//-1: Titel aufwärts
-	//-2: Autor aufwärts
-	//-3: Verlag/Studio/Label aufwärts
-	//-4: ISBN aufwärts
-	//-5: Erscheinungsdatum aufwärts
-	//-6: Schauspieler aufwärts
-
-	//99: zurück
+	//
+	//11: Titel aufwärts
+	//12: Autor aufwärts
+	//13: Verlag/Studio/Label aufwärts
+	//14: ISBN aufwärts
+	//15: Erscheinungsdatum aufwärts
+	//16: Schauspieler aufwärts
+	//
 	//e: exit
+	int SortMenue (void);
 
-	char ChangeMenue (void);
 	//Menü für die Optionen zum ändern
+	//0: Zurück zur Liste
 	//1: Titel
 	//2: Autor
 	//3: Verlag/Studio/Label
@@ -126,28 +128,29 @@
 	//6: Schauspieler
 	//7: Zusammenfassung
 	//8: Genre
-	//99: zurück
 	//e: exit
+	char ChangeMenue (void);
 
-	char SearchMenue (void);
 	//Menü für die Optionen der Suche
+	//0: Zurück zur Liste
 	//1: Titel
 	//2: Autor
 	//3: Verlag/Studio/Label
 	//4: ISBN
 	//5: Erscheinungsdatum
 	//6: Schauspieler
-	//99: zurück
 	//e: exit
-
-	char SearchMenueResult (void);
+	char SearchMenue (void);
+	
+	//0: Zurück zur Liste
 	//1: Suchen
 	//2: Detail
 	//3: Ändern
 	//4: Löschen
-	//5: Sortieren (Nur in der Suchdatei)
-	//88: vor
-	//99: Zurück zur Liste (Suchdatei Löschen)
+	//5: Sortieren
+	//v: vor
+	//z: zurück
 	//e: exit
-
+	char SearchMenueResult (void);
+	
 #endif
